@@ -58,7 +58,7 @@ namespace Library_Managment__System
 
         private void label1_Click(object sender, EventArgs e)
         {
-            label1.Text=$"Memory Used :{Sign_up.Mem()}";
+            label1.Text = $"Memory Used :{Sign_up.Mem()}";
         }
     }
 }

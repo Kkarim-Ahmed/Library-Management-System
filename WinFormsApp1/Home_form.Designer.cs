@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home_form));
             Borrow_btn = new Button();
             Return_btn = new Button();
             Buy_btn = new Button();
@@ -38,13 +39,14 @@
             // 
             // Borrow_btn
             // 
+            Borrow_btn.BackColor = SystemColors.Control;
             Borrow_btn.Location = new Point(85, 77);
             Borrow_btn.Margin = new Padding(4, 3, 4, 3);
             Borrow_btn.Name = "Borrow_btn";
             Borrow_btn.Size = new Size(88, 27);
             Borrow_btn.TabIndex = 0;
             Borrow_btn.Text = "Borrow";
-            Borrow_btn.UseVisualStyleBackColor = true;
+            Borrow_btn.UseVisualStyleBackColor = false;
             Borrow_btn.Click += Borrow_btn_Click;
             // 
             // Return_btn
@@ -105,6 +107,9 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ButtonFace;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(623, 463);
             Controls.Add(label1);
             Controls.Add(New_member_btn);

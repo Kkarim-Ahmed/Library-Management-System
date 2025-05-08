@@ -33,13 +33,14 @@ namespace Library_Managment__System
             label1 = new Label();
             old_name = new TextBox();
             phone_number = new TextBox();
-            Book_name = new TextBox();
             label2 = new Label();
             label3 = new Label();
             Search_btn = new Button();
             bookBindingSource = new BindingSource(components);
-            listBox1 = new ListBox();
+            Book_name = new ComboBox();
+            bookBindingSource1 = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)bookBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)bookBindingSource1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -70,21 +71,6 @@ namespace Library_Managment__System
             phone_number.Name = "phone_number";
             phone_number.Size = new Size(116, 23);
             phone_number.TabIndex = 2;
-            // 
-            // Book_name
-            // 
-            Book_name.AccessibleDescription = "";
-            Book_name.AccessibleName = "";
-            Book_name.AllowDrop = true;
-            Book_name.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            Book_name.AutoCompleteSource = AutoCompleteSource.HistoryList;
-            Book_name.Cursor = Cursors.IBeam;
-            Book_name.Location = new Point(18, 260);
-            Book_name.Margin = new Padding(4, 3, 4, 3);
-            Book_name.Name = "Book_name";
-            Book_name.Size = new Size(116, 23);
-            Book_name.TabIndex = 3;
-            Book_name.TextChanged += listBox1_SelectedIndexChanged;
             // 
             // label2
             // 
@@ -121,26 +107,30 @@ namespace Library_Managment__System
             // 
             bookBindingSource.DataSource = typeof(Book);
             // 
-            // listBox1
+            // Book_name
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(18, 280);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(116, 79);
-            listBox1.TabIndex = 7;
-            listBox1.Visible = false;
-            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
+            Book_name.DataSource = bookBindingSource1;
+            Book_name.DisplayMember = "1";
+            Book_name.FormattingEnabled = true;
+            Book_name.Location = new Point(18, 272);
+            Book_name.Name = "Book_name";
+            Book_name.Size = new Size(116, 23);
+            Book_name.TabIndex = 7;
+            Book_name.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            // 
+            // bookBindingSource1
+            // 
+            bookBindingSource1.DataSource = typeof(Book);
             // 
             // Old_Member
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(623, 463);
-            Controls.Add(listBox1);
+            Controls.Add(Book_name);
             Controls.Add(Search_btn);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(Book_name);
             Controls.Add(phone_number);
             Controls.Add(old_name);
             Controls.Add(label1);
@@ -150,6 +140,7 @@ namespace Library_Managment__System
             Text = "Old_Member";
             Load += Old_Member_Load;
             ((System.ComponentModel.ISupportInitialize)bookBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)bookBindingSource1).EndInit();
             ResumeLayout(false);
             PerformLayout();
 
@@ -160,11 +151,11 @@ namespace Library_Managment__System
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox old_name;
         private System.Windows.Forms.TextBox phone_number;
-        private System.Windows.Forms.TextBox Book_name;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button Search_btn;
         private BindingSource bookBindingSource;
-        private ListBox listBox1;
+        private ComboBox Book_name;
+        private BindingSource bookBindingSource1;
     }
 }

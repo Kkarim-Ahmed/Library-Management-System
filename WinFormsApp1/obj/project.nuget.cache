@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GUycxFlB+UI=",
+  "dgSpecHash": "iJokUUcUNO4=",
   "success": true,
-  "projectFilePath": "E:\\Visual Studio Projects\\Library System\\WinFormsApp1\\WinFormsApp1.csproj",
+  "projectFilePath": "E:\\Visual Studio Projects\\Library-Management-System\\WinFormsApp1\\WinFormsApp1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pc\\.nuget\\packages\\csvhelper\\33.0.1\\csvhelper.33.0.1.nupkg.sha512"
   ],

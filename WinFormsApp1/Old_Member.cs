@@ -19,8 +19,6 @@ namespace Library_Managment__System
         public Old_Member()
         {
             InitializeComponent();
-            listBox1.Visible = false;
-            listBox1.SelectedIndexChanged += new System.EventHandler(listBox1_SelectedIndexChanged);
 
         }
 
@@ -60,49 +58,8 @@ namespace Library_Managment__System
 
         }
 
-        private void nameTextBox(object sender, EventArgs e)
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var query = Book_name.Text.ToLower(); // Get the text typed by the user and convert it to lowercase
-
-            // Filter suggestions based on the query typed by the user
-            var suggestions = Booklist
-                .Where(book => book.Name.ToLower().Contains(query))  // Find books that match the query
-                .Take(5)  // Limit to 5 suggestions
-                .ToList();
-
-            // Show the suggestion list only if there are matches and the query is not empty
-            if (string.IsNullOrWhiteSpace(query) || !suggestions.Any())
-            {
-                listBox1.Visible = false; // Hide suggestions if input is empty or no matches
-            }
-            else
-            {
-                listBox1.DataSource = suggestions; // Populate the ListBox with the filtered suggestions
-                listBox1.Visible = true; // Make the suggestion list visible
-            }
-
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            var query = Book_name.Text.ToLower(); // Get the text typed by the user and convert it to lowercase
-
-            // Filter suggestions based on the query typed by the user
-            var suggestions = Booklist
-                .Where(book => book.Name.ToLower().Contains(query))  // Find books that match the query
-                .Take(5)  // Limit to 5 suggestions
-                .ToList();
-
-            // Show the suggestion list only if there are matches and the query is not empty
-            if (string.IsNullOrWhiteSpace(query) || !suggestions.Any())
-            {
-                listBox1.Visible = false; // Hide suggestions if input is empty or no matches
-            }
-            else
-            {
-                listBox1.DataSource = suggestions.Select(b => b.Name).ToList(); // Populate the ListBox with the filtered suggestions (only book names)
-                listBox1.Visible = true; // Make the suggestion list visible
-            }
 
         }
     }
