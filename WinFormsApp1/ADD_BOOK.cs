@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Inventory;
 
-
+namespace Library_Managment__System
 {
     public partial class ADD_BOOK : Form
     {
