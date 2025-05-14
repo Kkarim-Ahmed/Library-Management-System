@@ -11,11 +11,12 @@ namespace Inventory
 {
     public abstract class Inventory
     {
-        public static string BOOK_Fpath = "E:\\Visual Studio Projects\\Library-Management-System\\Books.CSV";
+        public static string BOOK_Fpath = "D:\\New folder (3)\\Books.CSV";
         public static string DVD_Fpath = "E:\\Visual Studio Projects\\Library-Management-System\\DVD.CSV";
         public static string IQGAMES_Fpath = "E:\\Visual Studio Projects\\Library-Management-System\\IQGames.CSV";
 
-        public string Name;
+        public string Name { get; set; }  // Replaces the public field
+
         private string Quant, Price;
 
         public string price

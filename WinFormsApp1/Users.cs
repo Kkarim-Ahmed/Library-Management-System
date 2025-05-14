@@ -9,6 +9,7 @@ using CsvHelper;
 using Library_Managment__System;
 using static Inventory.Book;
 using Microsoft.VisualBasic.Devices;
+using System.Linq.Expressions;
 namespace Library_Managment__System { 
 
     
@@ -63,6 +64,9 @@ namespace Library_Managment__System {
 
     public class NewMember : User
     {
+        
+
+
         private string phoneNumber="";
         public string depart="";
         public int TrustScore { get; private set; }//auto implemented property
@@ -78,6 +82,14 @@ namespace Library_Managment__System {
             this.PhoneNumber = phoneNumber;
             this.depart= department;
         }
+        List<NewMember> MemberList = new List<NewMember>
+{
+    new NewMember("Alice Smith", "123-456-7890", "HR") { TrustScore = 88 },
+    new NewMember("Bob Johnson", "234-567-8901", "IT") { TrustScore = 92 },
+    new NewMember("Charlie Lee", "345-678-9012", "Finance") { TrustScore = 76 },
+    new NewMember("Dana White", "456-789-0123", "Marketing") { TrustScore = 84 }
+};
+
         // Override Sign to register user
         public override void Sign(string name, string phone,string department)
         {

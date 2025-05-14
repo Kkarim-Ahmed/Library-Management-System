@@ -35,5 +35,10 @@ namespace Library_Managment__System
         {
             label4.Text = $"Memory Usage :{Sign_up.Mem().ToString()}";
         }
+
+        private void NBook_name_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
