@@ -11,10 +11,10 @@ using static Inventory.Book;
 using Microsoft.VisualBasic.Devices;
 using System.Linq.Expressions;
 using Inventory;
-namespace Library_Managment__System { 
-
+namespace UserNamespace
+{
     
-    public class User
+    public abstract class User
     {
         public static string Old_members_Fpath = "E:\\Git Repos\\Library-Management-System\\UsersDataBase.csv";
         public static string Admins_FBath = "E:\\Visual Studio Projects\\Library System\\UsersDataBase.csv";
@@ -37,7 +37,6 @@ namespace Library_Managment__System {
             Name = name;
             department = "";
         }
-
         public virtual bool Log(string id, string password)
         {
             return false;
@@ -87,6 +86,9 @@ namespace Library_Managment__System {
             this.phoneNumber = phone;
             this.depart = department;
         }
+        public static List<string> DepartList = new List<string>()
+        {"Computer Engineering", "Architecture","Electrical", "Computer Science"
+        };
 
 
             public static List<OldMember> ReadUsers()
@@ -140,7 +142,7 @@ namespace Library_Managment__System {
             if (string.IsNullOrWhiteSpace(searchTerm))
             {
                 MessageBox.Show("Please enter a Username");
-                return new User();
+                return new OldMember();
             }
 
             try

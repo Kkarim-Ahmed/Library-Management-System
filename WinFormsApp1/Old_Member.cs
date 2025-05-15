@@ -80,5 +80,16 @@ namespace Library_Managment__System
         {
 
         }
+
+        private void phone_number_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void phone_number_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
     }
 }

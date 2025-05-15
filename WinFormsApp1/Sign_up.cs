@@ -8,9 +8,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UserNamespace;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
+
+   
 
 namespace Library_Managment__System
 {
+
+
     public partial class Sign_up : Form
     {
         public static double Mem()
@@ -23,9 +30,24 @@ namespace Library_Managment__System
             ;
         }
 
+        private void InitializeComboBox()
+        {
+            // Set ComboBox data source to the list of books (or members)
+            NMember_depart.DataSource = OldMember.DepartList;
+
+
+            // Enable AutoComplete for ComboBox
+            NMember_depart.AutoCompleteMode = AutoCompleteMode.SuggestAppend;  // Suggest matching items as the user types
+            NMember_depart.AutoCompleteSource = AutoCompleteSource.ListItems; // Use the list items as suggestions
+        }
+
         public Sign_up()
         {
+
             InitializeComponent();
+            InitializeComboBox();
+
+
         }
 
         private void ADD_NMember_Click(object sender, EventArgs e)
@@ -44,6 +66,22 @@ namespace Library_Managment__System
         private void NMember_name_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void NMemebr_phone_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void b_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NMemebr_phone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar)&& !char.IsControl(e.KeyChar))
+                e.Handled = true;
         }
     }
 }

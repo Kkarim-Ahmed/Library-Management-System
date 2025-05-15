@@ -34,12 +34,14 @@ namespace Library_Managment__System
             NMember_name = new TextBox();
             label2 = new Label();
             NMemebr_phone = new TextBox();
-            NMember_depart = new TextBox();
             label3 = new Label();
             ADD_NMember = new Button();
             bookBindingSource = new BindingSource(components);
             label4 = new Label();
+            NMember_depart = new ComboBox();
+            oldMemberBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)bookBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)oldMemberBindingSource).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -74,17 +76,12 @@ namespace Library_Managment__System
             // 
             NMemebr_phone.Location = new Point(43, 166);
             NMemebr_phone.Margin = new Padding(4, 3, 4, 3);
+            NMemebr_phone.MaxLength = 11;
             NMemebr_phone.Name = "NMemebr_phone";
             NMemebr_phone.Size = new Size(116, 23);
             NMemebr_phone.TabIndex = 3;
-            // 
-            // NMember_depart
-            // 
-            NMember_depart.Location = new Point(43, 262);
-            NMember_depart.Margin = new Padding(4, 3, 4, 3);
-            NMember_depart.Name = "NMember_depart";
-            NMember_depart.Size = new Size(116, 23);
-            NMember_depart.TabIndex = 4;
+            NMemebr_phone.TextChanged += NMemebr_phone_TextChanged;
+            NMemebr_phone.KeyPress += NMemebr_phone_KeyPress;
             // 
             // label3
             // 
@@ -121,15 +118,33 @@ namespace Library_Managment__System
             label4.Text = " Memory Usage";
             label4.Click += label4_Click;
             // 
+            // NMember_depart
+            // 
+            NMember_depart.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            NMember_depart.AutoCompleteSource = AutoCompleteSource.ListItems;
+            NMember_depart.DataSource = oldMemberBindingSource;
+            NMember_depart.DropDownStyle = ComboBoxStyle.DropDownList;
+            NMember_depart.FormattingEnabled = true;
+            NMember_depart.Location = new Point(43, 266);
+            NMember_depart.Margin = new Padding(0);
+            NMember_depart.Name = "NMember_depart";
+            NMember_depart.Size = new Size(121, 23);
+            NMember_depart.TabIndex = 9;
+            NMember_depart.SelectedIndexChanged += b_SelectedIndexChanged;
+            // 
+            // oldMemberBindingSource
+            // 
+            oldMemberBindingSource.DataSource = typeof(UserNamespace.OldMember);
+            // 
             // Sign_up
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(623, 463);
+            Controls.Add(NMember_depart);
             Controls.Add(label4);
             Controls.Add(ADD_NMember);
             Controls.Add(label3);
-            Controls.Add(NMember_depart);
             Controls.Add(NMemebr_phone);
             Controls.Add(label2);
             Controls.Add(NMember_name);
@@ -139,6 +154,7 @@ namespace Library_Managment__System
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sign_up";
             ((System.ComponentModel.ISupportInitialize)bookBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)oldMemberBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
 
@@ -150,10 +166,11 @@ namespace Library_Managment__System
         private System.Windows.Forms.TextBox NMember_name;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox NMemebr_phone;
-        private System.Windows.Forms.TextBox NMember_depart;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button ADD_NMember;
         private BindingSource bookBindingSource;
         public Label label4;
+        private ComboBox NMember_depart;
+        private BindingSource oldMemberBindingSource;
     }
 }
