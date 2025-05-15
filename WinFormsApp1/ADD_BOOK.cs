@@ -25,7 +25,7 @@ namespace Library_Managment__System
 
         private void ADD_NBook_Click(object sender, EventArgs e)
         {
-            Book nBook = new Book(NBook_name.Text, NBook_author.Text, NBook_Year.Text, NBook_Price.Text);
+            Book nBook = new Book(NBook_name.Text, NBook_author.Text, NBook_Year.Text, int.Parse(NBook_Price.Text));
             Book.Add_Book_csv(nBook);
             MessageBox.Show("Done");
             this.Close();

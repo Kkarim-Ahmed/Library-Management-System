@@ -17,15 +17,15 @@ namespace Inventory
 
         public string Name { get; set; }  // Replaces the public field
 
-        private string Quant, Price;
+        private int Quant, Price;
 
-        public string price
+        public int price
         {
             get { return Price; }
             set { Price = value; }
         }
 
-        public string quant
+        public int quant
         {
             get { return Quant; }
             set { Quant = value; } // Fixed logic to allow zero
@@ -33,8 +33,8 @@ namespace Inventory
 
         public Inventory() {
             Name = "";
-            Quant = "";
-            Price = "";
+            Quant = 0;
+            Price = 0;
         }
         public virtual void add_item() { }
     }
@@ -48,13 +48,13 @@ namespace Inventory
             Year = "";
         }
 
-        public Book(string name, string author, string year, string price)
+        public Book(string name, string author, string year, int price)
         {
             this.Name = name;
             this.price = price;
             this.Author = author;
             this.Year = year;
-            this.quant = "10"; // Initialize with default quantity
+            this.quant = 0; // Initialize with default quantity
         }
 
         public static void Add_Book_csv(Book book)
