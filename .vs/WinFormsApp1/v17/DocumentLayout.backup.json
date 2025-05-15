@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "E:\\Git Repos\\Library-Management-System\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|e:\\git repos\\library-management-system\\winformsapp1\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|e:\\git repos\\library-management-system\\winformsapp1\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,15 +15,11 @@
       "RelativeMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\add_book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|e:\\git repos\\library-management-system\\winformsapp1\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|e:\\git repos\\library-management-system\\winformsapp1\\sign_up.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\sign_up.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|e:\\git repos\\library-management-system\\winformsapp1\\sign_up.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|E:\\Git Repos\\Library-Management-System\\winformsapp1\\sign_up.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\sign_up.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -62,17 +62,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Users.cs",
               "DocumentMoniker": "E:\\Git Repos\\Library-Management-System\\WinFormsApp1\\Users.cs",
               "RelativeDocumentMoniker": "WinFormsApp1\\Users.cs",
               "ToolTip": "E:\\Git Repos\\Library-Management-System\\WinFormsApp1\\Users.cs",
               "RelativeToolTip": "WinFormsApp1\\Users.cs",
-              "ViewState": "AgIAAOMAAAAAAAAAAAAAAI0AAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAL8AAAAAAAAAAAAQwJgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-14T21:32:27.246Z",
               "IsPinned": true,
@@ -80,21 +80,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Inventory.cs",
               "DocumentMoniker": "E:\\Git Repos\\Library-Management-System\\WinFormsApp1\\Inventory.cs",
               "RelativeDocumentMoniker": "WinFormsApp1\\Inventory.cs",
               "ToolTip": "E:\\Git Repos\\Library-Management-System\\WinFormsApp1\\Inventory.cs",
               "RelativeToolTip": "WinFormsApp1\\Inventory.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAewBUAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAiwB8AAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-14T22:05:08.027Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ADD_BOOK.cs",
               "DocumentMoniker": "E:\\Git Repos\\Library-Management-System\\WinFormsApp1\\ADD_BOOK.cs",
               "RelativeDocumentMoniker": "WinFormsApp1\\ADD_BOOK.cs",
@@ -132,8 +131,7 @@
               "ToolTip": "E:\\Git Repos\\Library-Management-System\\WinFormsApp1\\Sign_up.cs [Design]",
               "RelativeToolTip": "WinFormsApp1\\Sign_up.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T14:30:25.761Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-05-15T14:30:25.761Z"
             },
             {
               "$type": "Document",
@@ -144,8 +142,7 @@
               "ToolTip": "E:\\Git Repos\\Library-Management-System\\WinFormsApp1\\ADD_BOOK.cs [Design]",
               "RelativeToolTip": "WinFormsApp1\\ADD_BOOK.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T12:59:36.122Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-05-15T12:59:36.122Z"
             },
             {
               "$type": "Document",
@@ -157,8 +154,7 @@
               "RelativeToolTip": "WinFormsApp1\\ADD_BOOK.Designer.cs",
               "ViewState": "AgIAADwAAAAAAAAAAADwv1AAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T12:58:30.477Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-15T12:58:30.477Z"
             },
             {
               "$type": "Document",
@@ -181,8 +177,7 @@
               "RelativeToolTip": "WinFormsApp1\\Old_Member.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAKYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T00:39:04.337Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-15T00:39:04.337Z"
             },
             {
               "$type": "Document",
