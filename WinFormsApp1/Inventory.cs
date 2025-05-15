@@ -40,7 +40,8 @@ namespace Inventory
 
     public class Book : Inventory
     {
-        public string Author, Year;
+        public string Author {get;set;}
+        public string Year { get; set; }
 
         public Book() {
             Author = "";
@@ -62,13 +63,9 @@ namespace Inventory
                 using (var writer = new StreamWriter(BOOK_Fpath))
                 using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
                 {
-                    csv.WriteHeader<Book>();
-                    csv.NextRecord();
-                    foreach (var book in books)
-                    {
-                        csv.WriteRecord(book);
-                        csv.NextRecord();
-                    }
+                    // Register the mapping class
+                    csv.Context.RegisterClassMap<BookMap>();
+                    csv.WriteRecords(books);
                 }
             }
             catch (Exception ex)
@@ -76,6 +73,7 @@ namespace Inventory
                 MessageBox.Show($"Error writing to CSV: {ex.Message}");
             }
         }
+
 
         public static void Add_Book_csv(Book book)
         {
