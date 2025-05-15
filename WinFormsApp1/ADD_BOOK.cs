@@ -25,7 +25,7 @@ namespace Library_Managment__System
 
         private void ADD_NBook_Click(object sender, EventArgs e)
         {
-            Book nBook = new Book(NBook_name.Text, NBook_author.Text, NBook_Year.Text, int.Parse(NBook_Price.Text));
+            Book nBook = new Book(NBook_name.Text, NBook_author.Text, NBook_Year.Text, int.Parse(NBook_Price.Text), int.Parse(NBook_Quant.Text));
             Book.Add_Book_csv(nBook);
             MessageBox.Show("Done");
             this.Close();
@@ -39,6 +39,32 @@ namespace Library_Managment__System
         private void NBook_name_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NBook_Price_TextChanged(object sender, EventArgs e)
+        {
+                
+        }
+
+        private void NBook_Price_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void NBook_Quant_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

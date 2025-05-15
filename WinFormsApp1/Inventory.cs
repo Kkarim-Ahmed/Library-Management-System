@@ -27,8 +27,7 @@ namespace Inventory
 
         public int quant
         {
-            get { return Quant; }
-            set { Quant = value; } 
+            get;set;
         }
 
         public Inventory() {
@@ -48,13 +47,34 @@ namespace Inventory
             Year = "";
         }
 
-        public Book(string name, string author, string year, int price)
+        public Book(string name, string author, string year, int price,int quant)
         {
             this.Name = name;
             this.price = price;
             this.Author = author;
             this.Year = year;
-            this.quant = 0; // Initialize with default quantity
+            this.quant = quant; 
+        }
+        public static void WriteBooks(List<Book> books)
+        {
+            try
+            {
+                using (var writer = new StreamWriter(BOOK_Fpath))
+                using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
+                {
+                    csv.WriteHeader<Book>();
+                    csv.NextRecord();
+                    foreach (var book in books)
+                    {
+                        csv.WriteRecord(book);
+                        csv.NextRecord();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error writing to CSV: {ex.Message}");
+            }
         }
 
         public static void Add_Book_csv(Book book)
@@ -137,6 +157,7 @@ namespace Inventory
                 return new Book(); ;
             }
         }
+       
         public sealed class BookMap : ClassMap<Book>
         {
             public BookMap()

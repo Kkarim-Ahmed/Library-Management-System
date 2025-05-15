@@ -38,6 +38,8 @@
             NBook_Price = new TextBox();
             ADD_NBook = new Button();
             label4 = new Label();
+            NBook_Quant = new TextBox();
+            label5 = new Label();
             SuspendLayout();
             // 
             // label
@@ -88,7 +90,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(50, 288);
+            label2.Location = new Point(50, 280);
             label2.Margin = new Padding(5, 0, 5, 0);
             label2.Name = "label2";
             label2.Size = new Size(37, 20);
@@ -98,7 +100,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(50, 421);
+            label3.Location = new Point(55, 403);
             label3.Margin = new Padding(5, 0, 5, 0);
             label3.Name = "label3";
             label3.Size = new Size(41, 20);
@@ -107,15 +109,17 @@
             // 
             // NBook_Price
             // 
-            NBook_Price.Location = new Point(55, 477);
+            NBook_Price.Location = new Point(55, 459);
             NBook_Price.Margin = new Padding(5, 4, 5, 4);
             NBook_Price.Name = "NBook_Price";
             NBook_Price.Size = new Size(132, 27);
             NBook_Price.TabIndex = 7;
+            NBook_Price.TextChanged += NBook_Price_TextChanged;
+            NBook_Price.KeyPress += NBook_Price_KeyPress;
             // 
             // ADD_NBook
             // 
-            ADD_NBook.Location = new Point(368, 288);
+            ADD_NBook.Location = new Point(404, 264);
             ADD_NBook.Margin = new Padding(5, 4, 5, 4);
             ADD_NBook.Name = "ADD_NBook";
             ADD_NBook.Size = new Size(101, 36);
@@ -134,11 +138,31 @@
             label4.Text = "Memory Usage";
             label4.Click += label4_Click;
             // 
+            // NBook_Quant
+            // 
+            NBook_Quant.Location = new Point(380, 100);
+            NBook_Quant.Name = "NBook_Quant";
+            NBook_Quant.Size = new Size(125, 27);
+            NBook_Quant.TabIndex = 10;
+            NBook_Quant.KeyPress += NBook_Quant_KeyPress;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(368, 49);
+            label5.Margin = new Padding(5, 0, 5, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(65, 20);
+            label5.TabIndex = 11;
+            label5.Text = "Quantity";
+            // 
             // ADD_BOOK
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(712, 617);
+            Controls.Add(label5);
+            Controls.Add(NBook_Quant);
             Controls.Add(label4);
             Controls.Add(ADD_NBook);
             Controls.Add(NBook_Price);
@@ -170,5 +194,7 @@
         private System.Windows.Forms.TextBox NBook_Price;
         private System.Windows.Forms.Button ADD_NBook;
         private Label label4;
+        private TextBox NBook_Quant;
+        private Label label5;
     }
 }

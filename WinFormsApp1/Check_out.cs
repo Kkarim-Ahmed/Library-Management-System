@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Inventory;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,6 +31,8 @@ namespace Library_Managment__System
 
         private void Done_Click(object sender, EventArgs e)
         {
+            var Booklist = Book.Readbooks;
+            
             this.Close();
   
         }

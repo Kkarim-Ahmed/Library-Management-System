@@ -45,8 +45,8 @@ namespace Library_Managment__System
                 book_name = found_book.Name;
                 book_author = found_book.Author;
                 book_year = found_book.Year;
-                book_price = found_book.price;
-                book_quant = found_book.quant;
+                book_price = found_book.price.ToString();
+                book_quant = found_book.quant.ToString();
 
                 Check_out form = new Check_out();
                 this.Close();
