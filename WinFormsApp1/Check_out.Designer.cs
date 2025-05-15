@@ -28,44 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.Done = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            label1 = new Label();
+            Done = new Button();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 25);
-            this.label1.MinimumSize = new System.Drawing.Size(150, 150);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 150);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Bill";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            label1.AutoSize = true;
+            label1.Location = new Point(17, 38);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.MinimumSize = new Size(200, 231);
+            label1.Name = "label1";
+            label1.Size = new Size(200, 231);
+            label1.TabIndex = 0;
+            label1.Text = "Bill";
+            label1.Click += label1_Click;
             // 
             // Done
             // 
-            this.Done.Location = new System.Drawing.Point(16, 252);
-            this.Done.Name = "Done";
-            this.Done.Size = new System.Drawing.Size(75, 23);
-            this.Done.TabIndex = 1;
-            this.Done.Text = "Done";
-            this.Done.UseVisualStyleBackColor = true;
-            this.Done.Click += new System.EventHandler(this.Done_Click);
+            Done.Location = new Point(21, 388);
+            Done.Margin = new Padding(4, 5, 4, 5);
+            Done.Name = "Done";
+            Done.Size = new Size(100, 35);
+            Done.TabIndex = 1;
+            Done.Text = "Done";
+            Done.UseVisualStyleBackColor = true;
+            Done.Click += Done_Click;
             // 
             // Check_out
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(534, 401);
-            this.Controls.Add(this.Done);
-            this.Controls.Add(this.label1);
-            this.Name = "Check_out";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Check_out";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(712, 617);
+            Controls.Add(Done);
+            Controls.Add(label1);
+            Margin = new Padding(4, 5, 4, 5);
+            Name = "Check_out";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Check_out";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

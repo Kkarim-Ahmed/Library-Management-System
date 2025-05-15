@@ -42,6 +42,7 @@ namespace Library_Managment__System
             Book found_book = Book.Search(comboBox1.Text);
             if (found_book != null)
             {
+
                 book_name = found_book.Name;
                 book_author = found_book.Author;
                 book_year = found_book.Year;
@@ -73,6 +74,11 @@ namespace Library_Managment__System
             // Handle ComboBox selection change if necessary
             // For instance, show details based on selected book/member
             comboBox1.DisplayMember = "Name";
+        }
+
+        private void old_name_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

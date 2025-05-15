@@ -146,9 +146,9 @@ namespace Inventory
                 if (foundBook == null)
                 {
                     MessageBox.Show($"Book '{searchTerm}' not found");
-                    return foundBook;
+                    return new Book();
                 }
-                else return new Book();
+                else return foundBook;
 
             }
             catch (Exception ex)
@@ -157,7 +157,38 @@ namespace Inventory
                 return new Book(); ;
             }
         }
-       
+        public static int Search(List<Book> Books, string searchTerm)
+        {
+            try
+            {
+                var books =Books;
+                if (books == null || books.Count == 0)
+                {
+                    MessageBox.Show("No books found in database");
+                    return -1;
+                }
+                var foundBook = books.FirstOrDefault(b =>
+                    !string.IsNullOrEmpty(b.Name) &&
+                    b.Name.Equals(searchTerm, StringComparison.OrdinalIgnoreCase));
+
+                int index = books.FindIndex(b =>
+            !string.IsNullOrEmpty(b.Name) &&
+            b.Name.Equals(searchTerm, StringComparison.OrdinalIgnoreCase));
+
+                if (foundBook == null)
+                {
+                    MessageBox.Show($"Book '{searchTerm}' not found");
+                    return -1;
+                }
+                else return index;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Search error: {ex.Message}");
+                return 0; ;
+            }
+        }
         public sealed class BookMap : ClassMap<Book>
         {
             public BookMap()

@@ -12,10 +12,13 @@ using System.Windows.Forms;
 namespace Library_Managment__System
 {
     public partial class Check_out : Form
+
     {
+        
         public Check_out()
         {
             InitializeComponent();
+            this.Load +=label1_Click;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -31,8 +34,13 @@ namespace Library_Managment__System
 
         private void Done_Click(object sender, EventArgs e)
         {
-            var Booklist = Book.Readbooks;
-            
+            List<Book> Booklist = Book.Readbooks();
+            int index = Book.Search(Booklist, Old_Member.book_name);
+            if (index != -1)
+            {
+                Booklist[index].quant-=1;
+                Book.WriteBooks(Booklist);
+            }
             this.Close();
   
         }

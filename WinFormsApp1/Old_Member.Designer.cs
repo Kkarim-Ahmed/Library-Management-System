@@ -61,12 +61,13 @@ namespace Library_Managment__System
             // 
             old_name.AllowDrop = true;
             old_name.BackColor = SystemColors.Window;
-            old_name.ForeColor = SystemColors.Menu;
+            old_name.ForeColor = SystemColors.WindowText;
             old_name.Location = new Point(21, 97);
             old_name.Margin = new Padding(5, 4, 5, 4);
             old_name.Name = "old_name";
             old_name.Size = new Size(132, 27);
             old_name.TabIndex = 1;
+            old_name.TextChanged += old_name_TextChanged;
             // 
             // phone_number
             // 
