@@ -1,4 +1,5 @@
-﻿namespace Library_Managment__System
+﻿
+namespace Library_Managment__System
 {
     partial class ADD_BOOK
     {
@@ -45,84 +46,86 @@
             // label
             // 
             label.AutoSize = true;
-            label.Location = new Point(50, 49);
-            label.Margin = new Padding(5, 0, 5, 0);
+            label.Location = new Point(44, 37);
+            label.Margin = new Padding(4, 0, 4, 0);
             label.Name = "label";
-            label.Size = new Size(49, 20);
+            label.Size = new Size(39, 15);
             label.TabIndex = 0;
             label.Text = "Name";
             // 
             // NBook_name
             // 
-            NBook_name.Location = new Point(55, 100);
-            NBook_name.Margin = new Padding(5, 4, 5, 4);
+            NBook_name.Location = new Point(48, 75);
+            NBook_name.Margin = new Padding(4, 3, 4, 3);
             NBook_name.Name = "NBook_name";
-            NBook_name.Size = new Size(132, 27);
+            NBook_name.Size = new Size(116, 23);
             NBook_name.TabIndex = 1;
             NBook_name.TextChanged += NBook_name_TextChanged;
             // 
             // NBook_author
             // 
-            NBook_author.Location = new Point(55, 217);
-            NBook_author.Margin = new Padding(5, 4, 5, 4);
+            NBook_author.Location = new Point(48, 163);
+            NBook_author.Margin = new Padding(4, 3, 4, 3);
             NBook_author.Name = "NBook_author";
-            NBook_author.Size = new Size(132, 27);
+            NBook_author.Size = new Size(116, 23);
             NBook_author.TabIndex = 2;
             // 
             // NBook_Year
             // 
-            NBook_Year.Location = new Point(55, 329);
-            NBook_Year.Margin = new Padding(5, 4, 5, 4);
+            NBook_Year.Location = new Point(48, 247);
+            NBook_Year.Margin = new Padding(4, 3, 4, 3);
+            NBook_Year.MaxLength = 4;
             NBook_Year.Name = "NBook_Year";
-            NBook_Year.Size = new Size(132, 27);
+            NBook_Year.Size = new Size(116, 23);
             NBook_Year.TabIndex = 3;
+            NBook_Year.KeyPress += NBook_Year_KeyPress;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(50, 171);
-            label1.Margin = new Padding(5, 0, 5, 0);
+            label1.Location = new Point(44, 128);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(54, 20);
+            label1.Size = new Size(44, 15);
             label1.TabIndex = 4;
             label1.Text = "Author";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(50, 280);
-            label2.Margin = new Padding(5, 0, 5, 0);
+            label2.Location = new Point(44, 210);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(37, 20);
+            label2.Size = new Size(29, 15);
             label2.TabIndex = 5;
             label2.Text = "Year";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(55, 403);
-            label3.Margin = new Padding(5, 0, 5, 0);
+            label3.Location = new Point(48, 302);
+            label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(41, 20);
+            label3.Size = new Size(33, 15);
             label3.TabIndex = 6;
             label3.Text = "Price";
             // 
             // NBook_Price
             // 
-            NBook_Price.Location = new Point(55, 459);
-            NBook_Price.Margin = new Padding(5, 4, 5, 4);
+            NBook_Price.Location = new Point(48, 344);
+            NBook_Price.Margin = new Padding(4, 3, 4, 3);
             NBook_Price.Name = "NBook_Price";
-            NBook_Price.Size = new Size(132, 27);
+            NBook_Price.Size = new Size(116, 23);
             NBook_Price.TabIndex = 7;
             NBook_Price.TextChanged += NBook_Price_TextChanged;
             NBook_Price.KeyPress += NBook_Price_KeyPress;
             // 
             // ADD_NBook
             // 
-            ADD_NBook.Location = new Point(404, 264);
-            ADD_NBook.Margin = new Padding(5, 4, 5, 4);
+            ADD_NBook.Location = new Point(354, 198);
+            ADD_NBook.Margin = new Padding(4, 3, 4, 3);
             ADD_NBook.Name = "ADD_NBook";
-            ADD_NBook.Size = new Size(101, 36);
+            ADD_NBook.Size = new Size(88, 27);
             ADD_NBook.TabIndex = 8;
             ADD_NBook.Text = "ADD";
             ADD_NBook.UseVisualStyleBackColor = true;
@@ -131,36 +134,37 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(449, 12);
+            label4.Location = new Point(393, 9);
             label4.Name = "label4";
-            label4.Size = new Size(109, 20);
+            label4.Size = new Size(87, 15);
             label4.TabIndex = 9;
             label4.Text = "Memory Usage";
             label4.Click += label4_Click;
             // 
             // NBook_Quant
             // 
-            NBook_Quant.Location = new Point(380, 100);
+            NBook_Quant.Location = new Point(332, 75);
+            NBook_Quant.Margin = new Padding(3, 2, 3, 2);
             NBook_Quant.Name = "NBook_Quant";
-            NBook_Quant.Size = new Size(125, 27);
+            NBook_Quant.Size = new Size(110, 23);
             NBook_Quant.TabIndex = 10;
             NBook_Quant.KeyPress += NBook_Quant_KeyPress;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(368, 49);
-            label5.Margin = new Padding(5, 0, 5, 0);
+            label5.Location = new Point(322, 37);
+            label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
-            label5.Size = new Size(65, 20);
+            label5.Size = new Size(53, 15);
             label5.TabIndex = 11;
             label5.Text = "Quantity";
             // 
             // ADD_BOOK
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(712, 617);
+            ClientSize = new Size(623, 463);
             Controls.Add(label5);
             Controls.Add(NBook_Quant);
             Controls.Add(label4);
@@ -173,7 +177,7 @@
             Controls.Add(NBook_author);
             Controls.Add(NBook_name);
             Controls.Add(label);
-            Margin = new Padding(5, 4, 5, 4);
+            Margin = new Padding(4, 3, 4, 3);
             Name = "ADD_BOOK";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ADD_BOOK";
@@ -181,6 +185,8 @@
             ResumeLayout(false);
             PerformLayout();
         }
+
+
 
         #endregion
 

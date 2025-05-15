@@ -48,7 +48,7 @@ namespace Library_Managment__System
 
         private void NBook_Price_TextChanged(object sender, EventArgs e)
         {
-                
+
         }
 
         private void NBook_Price_KeyPress(object sender, KeyPressEventArgs e)
@@ -66,5 +66,13 @@ namespace Library_Managment__System
                 e.Handled = true;
             }
         }
+
+        private void NBook_Year_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsAsciiDigit(e.KeyChar) && !char.IsControl(e.KeyChar)){
+                e.Handled = true;
+            }
+        }
     }
 }
+    

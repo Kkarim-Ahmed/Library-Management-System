@@ -11,9 +11,11 @@ namespace Inventory
 {
     public abstract class Inventory
     {
-        public static string BOOK_Fpath = "D:\\New folder (3)\\Books.CSV";
-        public static string DVD_Fpath = "E:\\Visual Studio Projects\\Library-Management-System\\DVD.CSV";
-        public static string IQGAMES_Fpath = "E:\\Visual Studio Projects\\Library-Management-System\\IQGames.CSV";
+        //D:\New folder (3)
+        //E:\Git Repos\Library-Management-System
+        public static string BOOK_Fpath = "E:\\Git Repos\\Library-Management-System\\Books.CSV";
+        public static string DVD_Fpath = "E:\\Git Repos\\Library-Management-System\\DVD.CSV";
+        public static string IQGAMES_Fpath = "E:\\Git Repos\\Library-Management-System\\IQGames.CSV";
 
         public string Name { get; set; }  // Replaces the public field
 
@@ -57,7 +59,7 @@ namespace Inventory
             this.quant = quant; 
         }
         public static void WriteBooks(List<Book> books)
-        {
+        { 
             try
             {
                 using (var writer = new StreamWriter(BOOK_Fpath))
@@ -79,13 +81,28 @@ namespace Inventory
         {
             try
             {
+
                 if (!File.Exists(BOOK_Fpath))
                 {
                     File.WriteAllText(BOOK_Fpath, "Name,Author,Year,Price,Quant\n");
                     MessageBox.Show("file Created ");
                 }
-                File.AppendAllText(BOOK_Fpath,$"{book.Name},{book.Author},{book.Year},{book.price},{book.quant}\n");
-            }
+                List<Book> mylist = Book.Readbooks();
+                int index = Book.Search(mylist, book.Name);
+                if (index != -1)
+                {
+                    if (mylist[index].Name.ToLower() == book.Name.ToLower() && mylist[index].Author.ToLower() == book.Author.ToLower())
+                    {
+                        mylist[index].quant += book.quant;
+                        Book.WriteBooks(mylist);
+                        return;
+                    }
+                }
+                    File.AppendAllText(BOOK_Fpath, $"{book.Name.ToLower()},{book.Author.ToLower()},{book.Year},{book.price},{book.quant}\n");
+                }
+
+
+
             catch (Exception ex)
             {
                 MessageBox.Show($"Error saving book: {ex.Message}");
@@ -184,7 +201,7 @@ namespace Inventory
             catch (Exception ex)
             {
                 MessageBox.Show($"Search error: {ex.Message}");
-                return 0; ;
+                return -1 ;
             }
         }
         public sealed class BookMap : ClassMap<Book>
