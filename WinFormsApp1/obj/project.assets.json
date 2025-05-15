@@ -58,11 +58,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Programing\\GitHub Repos\\Library-Management-System\\Library-Management-System\\WinFormsApp1\\WinFormsApp1.csproj",
+      "projectUniqueName": "D:\\Programing\\GitHub Repos\\Library-Management-System\\WinFormsApp1\\WinFormsApp1.csproj",
       "projectName": "WinFormsApp1",
-      "projectPath": "D:\\Programing\\GitHub Repos\\Library-Management-System\\Library-Management-System\\WinFormsApp1\\WinFormsApp1.csproj",
+      "projectPath": "D:\\Programing\\GitHub Repos\\Library-Management-System\\WinFormsApp1\\WinFormsApp1.csproj",
       "packagesPath": "C:\\Users\\Karim Ahmed.KARIM\\.nuget\\packages\\",
-      "outputPath": "D:\\Programing\\GitHub Repos\\Library-Management-System\\Library-Management-System\\WinFormsApp1\\obj\\",
+      "outputPath": "D:\\Programing\\GitHub Repos\\Library-Management-System\\WinFormsApp1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Karim Ahmed.KARIM\\AppData\\Roaming\\NuGet\\NuGet.Config",
