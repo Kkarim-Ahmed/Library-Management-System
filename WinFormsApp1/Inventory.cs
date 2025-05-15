@@ -28,7 +28,7 @@ namespace Inventory
         public int quant
         {
             get { return Quant; }
-            set { Quant = value; } // Fixed logic to allow zero
+            set { Quant = value; } 
         }
 
         public Inventory() {
