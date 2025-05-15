@@ -27,12 +27,8 @@ namespace Inventory
             set { Price = value; }
         }
 
-        public int quant
-        {
-            get;set;
-        }
-
-        public Inventory() {
+        public int quant { get { return Quant;} set { Quant = value; } }
+                public Inventory() {
             Name = "";
             Quant = 0;
             Price = 0;
@@ -150,7 +146,6 @@ namespace Inventory
                 var books = Readbooks();
                 if (books == null || books.Count == 0)
                 {
-                    MessageBox.Show("No books found in database");
                     return new Book();
                 }
 

@@ -30,8 +30,8 @@ namespace Library_Managment__System
 
         private void ADD_NMember_Click(object sender, EventArgs e)
         {
-            NewMember nMember = new NewMember(NMember_name.Text, NMemebr_phone.Text, NMember_depart.Text);
-            nMember.Sign(nMember.Name, nMember.PhoneNumber, nMember.depart);
+            OldMember nMember = new OldMember(NMember_name.Text, NMemebr_phone.Text, NMember_depart.Text);
+            OldMember.Add_Users_csv(nMember);
             MessageBox.Show("Done");
             this.Close();
         }
@@ -39,6 +39,11 @@ namespace Library_Managment__System
         private void label4_Click(object sender, EventArgs e)
         {
             label4.Text = $"Memory usage : {Mem().ToString()}";
+        }
+
+        private void NMember_name_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
