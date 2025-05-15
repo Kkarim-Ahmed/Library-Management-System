@@ -11,7 +11,7 @@
       "RelativeMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\check_out.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|d:\\programing\\github repos\\library-management-system\\winformsapp1\\old_member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|D:\\Programing\\GitHub Repos\\Library-Management-System\\winformsapp1\\old_member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\old_member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -71,25 +71,17 @@
               "Title": "Inventory.cs",
               "DocumentMoniker": "D:\\Programing\\GitHub Repos\\Library-Management-System\\WinFormsApp1\\Inventory.cs",
               "RelativeDocumentMoniker": "WinFormsApp1\\Inventory.cs",
-              "ToolTip": "D:\\Programing\\GitHub Repos\\Library-Management-System\\WinFormsApp1\\Inventory.cs*",
-              "RelativeToolTip": "WinFormsApp1\\Inventory.cs*",
-              "ViewState": "AgIAAHsAAAAAAAAAAAAkwIgAAAARAAAAAAAAAA==",
+              "ToolTip": "D:\\Programing\\GitHub Repos\\Library-Management-System\\WinFormsApp1\\Inventory.cs",
+              "RelativeToolTip": "WinFormsApp1\\Inventory.cs",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAkwJUAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-14T22:05:08.027Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Old_Member.cs [Design]",
-              "DocumentMoniker": "D:\\Programing\\GitHub Repos\\Library-Management-System\\WinFormsApp1\\Old_Member.cs",
-              "RelativeDocumentMoniker": "WinFormsApp1\\Old_Member.cs",
-              "ToolTip": "D:\\Programing\\GitHub Repos\\Library-Management-System\\WinFormsApp1\\Old_Member.cs [Design]",
-              "RelativeToolTip": "WinFormsApp1\\Old_Member.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T01:27:11.892Z",
-              "EditorCaption": " [Design]"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",
@@ -101,12 +93,7 @@
               "RelativeToolTip": "WinFormsApp1\\Check_out.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T01:25:13.232Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+              "WhenOpened": "2025-05-15T01:25:13.232Z"
             },
             {
               "$type": "Document",
@@ -114,8 +101,8 @@
               "Title": "Check_out.cs",
               "DocumentMoniker": "D:\\Programing\\GitHub Repos\\Library-Management-System\\WinFormsApp1\\Check_out.cs",
               "RelativeDocumentMoniker": "WinFormsApp1\\Check_out.cs",
-              "ToolTip": "D:\\Programing\\GitHub Repos\\Library-Management-System\\WinFormsApp1\\Check_out.cs*",
-              "RelativeToolTip": "WinFormsApp1\\Check_out.cs*",
+              "ToolTip": "D:\\Programing\\GitHub Repos\\Library-Management-System\\WinFormsApp1\\Check_out.cs",
+              "RelativeToolTip": "WinFormsApp1\\Check_out.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAAkwBMAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-15T01:01:08.522Z",
@@ -131,20 +118,7 @@
               "RelativeToolTip": "WinFormsApp1\\Old_Member.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAKYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T00:39:04.337Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Check_out.cs [Design]",
-              "DocumentMoniker": "D:\\Programing\\GitHub Repos\\Library-Management-System\\WinFormsApp1\\Check_out.cs",
-              "RelativeDocumentMoniker": "WinFormsApp1\\Check_out.cs",
-              "ToolTip": "D:\\Programing\\GitHub Repos\\Library-Management-System\\WinFormsApp1\\Check_out.cs [Design]*",
-              "RelativeToolTip": "WinFormsApp1\\Check_out.cs [Design]*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T01:01:01.348Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-05-15T00:39:04.337Z"
             },
             {
               "$type": "Document",
@@ -169,8 +143,29 @@
               "RelativeToolTip": "WinFormsApp1\\Old_Member.cs",
               "ViewState": "AgIAACYAAAAAAAAAAAAgwCYAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T21:51:17.365Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-14T21:51:17.365Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Old_Member.cs [Design]",
+              "DocumentMoniker": "D:\\Programing\\GitHub Repos\\Library-Management-System\\WinFormsApp1\\Old_Member.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\Old_Member.cs",
+              "ToolTip": "D:\\Programing\\GitHub Repos\\Library-Management-System\\WinFormsApp1\\Old_Member.cs [Design]",
+              "RelativeToolTip": "WinFormsApp1\\Old_Member.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T01:27:11.892Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Check_out.cs [Design]",
+              "DocumentMoniker": "D:\\Programing\\GitHub Repos\\Library-Management-System\\WinFormsApp1\\Check_out.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\Check_out.cs",
+              "ToolTip": "D:\\Programing\\GitHub Repos\\Library-Management-System\\WinFormsApp1\\Check_out.cs [Design]",
+              "RelativeToolTip": "WinFormsApp1\\Check_out.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T01:01:01.348Z"
             },
             {
               "$type": "Bookmark",
@@ -185,8 +180,7 @@
               "ToolTip": "D:\\Programing\\GitHub Repos\\Library-Management-System\\WinFormsApp1\\ADD_BOOK.cs [Design]",
               "RelativeToolTip": "WinFormsApp1\\ADD_BOOK.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T23:02:07.22Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-05-14T23:02:07.22Z"
             }
           ]
         }
