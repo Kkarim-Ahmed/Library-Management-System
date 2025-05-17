@@ -113,7 +113,7 @@ namespace Library_Managment__System
         {
 
         }
-
+      
         private void button4_Click(object sender, EventArgs e)
         {
             int ind = int.Parse(Delete_Index.Text);
@@ -121,7 +121,7 @@ namespace Library_Managment__System
             CHECKOUT.Text = "";
             I = 1;
             Total = 0;
-            foreach (var item in Checkout_list)
+            foreach (var item in Checkout_list)  //Polymorphism
             {
                 if (item is Book book)
                 {

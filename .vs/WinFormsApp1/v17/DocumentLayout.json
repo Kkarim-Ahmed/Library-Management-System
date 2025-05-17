@@ -1,26 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\semester4\\oop\\Library-Management-System-main\\",
+  "WorkspaceRootPath": "E:\\Git Repos\\Library-Management-System\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|d:\\semester4\\oop\\library-management-system-main\\winformsapp1\\old_member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\old_member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|D:\\semester4\\oop\\Library-Management-System-main\\winformsapp1\\old_member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\old_member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|d:\\semester4\\oop\\library-management-system-main\\winformsapp1\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|e:\\git repos\\library-management-system\\winformsapp1\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|d:\\semester4\\oop\\library-management-system-main\\winformsapp1\\methods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\methods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|E:\\Git Repos\\Library-Management-System\\winformsapp1\\old_member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\old_member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|d:\\semester4\\oop\\library-management-system-main\\winformsapp1\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|e:\\git repos\\library-management-system\\winformsapp1\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|e:\\git repos\\library-management-system\\winformsapp1\\old_member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\old_member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|e:\\git repos\\library-management-system\\winformsapp1\\methods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\methods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,26 +38,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Inventory.cs",
-              "DocumentMoniker": "D:\\semester4\\oop\\Library-Management-System-main\\WinFormsApp1\\Inventory.cs",
+              "DocumentMoniker": "E:\\Git Repos\\Library-Management-System\\WinFormsApp1\\Inventory.cs",
               "RelativeDocumentMoniker": "WinFormsApp1\\Inventory.cs",
-              "ToolTip": "D:\\semester4\\oop\\Library-Management-System-main\\WinFormsApp1\\Inventory.cs",
+              "ToolTip": "E:\\Git Repos\\Library-Management-System\\WinFormsApp1\\Inventory.cs",
               "RelativeToolTip": "WinFormsApp1\\Inventory.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAQwBIAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-17T18:38:07.577Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Old_Member.cs",
-              "DocumentMoniker": "D:\\semester4\\oop\\Library-Management-System-main\\WinFormsApp1\\Old_Member.cs",
+              "DocumentMoniker": "E:\\Git Repos\\Library-Management-System\\WinFormsApp1\\Old_Member.cs",
               "RelativeDocumentMoniker": "WinFormsApp1\\Old_Member.cs",
-              "ToolTip": "D:\\semester4\\oop\\Library-Management-System-main\\WinFormsApp1\\Old_Member.cs",
+              "ToolTip": "E:\\Git Repos\\Library-Management-System\\WinFormsApp1\\Old_Member.cs",
               "RelativeToolTip": "WinFormsApp1\\Old_Member.cs",
-              "ViewState": "AgIAAGwAAAAAAAAAAAAuwHAAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-17T18:10:04.303Z",
               "EditorCaption": ""
@@ -66,9 +66,9 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Old_Member.cs [Design]",
-              "DocumentMoniker": "D:\\semester4\\oop\\Library-Management-System-main\\WinFormsApp1\\Old_Member.cs",
+              "DocumentMoniker": "E:\\Git Repos\\Library-Management-System\\WinFormsApp1\\Old_Member.cs",
               "RelativeDocumentMoniker": "WinFormsApp1\\Old_Member.cs",
-              "ToolTip": "D:\\semester4\\oop\\Library-Management-System-main\\WinFormsApp1\\Old_Member.cs [Design]",
+              "ToolTip": "E:\\Git Repos\\Library-Management-System\\WinFormsApp1\\Old_Member.cs [Design]",
               "RelativeToolTip": "WinFormsApp1\\Old_Member.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-17T18:09:59.173Z",
@@ -76,26 +76,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "Users.cs",
-              "DocumentMoniker": "D:\\semester4\\oop\\Library-Management-System-main\\WinFormsApp1\\Users.cs",
+              "DocumentMoniker": "E:\\Git Repos\\Library-Management-System\\WinFormsApp1\\Users.cs",
               "RelativeDocumentMoniker": "WinFormsApp1\\Users.cs",
-              "ToolTip": "D:\\semester4\\oop\\Library-Management-System-main\\WinFormsApp1\\Users.cs",
+              "ToolTip": "E:\\Git Repos\\Library-Management-System\\WinFormsApp1\\Users.cs",
               "RelativeToolTip": "WinFormsApp1\\Users.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAowD4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAtwC4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-17T18:06:42.054Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Methods.cs",
-              "DocumentMoniker": "D:\\semester4\\oop\\Library-Management-System-main\\WinFormsApp1\\Methods.cs",
+              "DocumentMoniker": "E:\\Git Repos\\Library-Management-System\\WinFormsApp1\\Methods.cs",
               "RelativeDocumentMoniker": "WinFormsApp1\\Methods.cs",
-              "ToolTip": "D:\\semester4\\oop\\Library-Management-System-main\\WinFormsApp1\\Methods.cs",
+              "ToolTip": "E:\\Git Repos\\Library-Management-System\\WinFormsApp1\\Methods.cs",
               "RelativeToolTip": "WinFormsApp1\\Methods.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAACIAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA8AAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-17T15:14:03.812Z",
               "EditorCaption": ""

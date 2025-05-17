@@ -12,6 +12,7 @@ namespace Library_Managment__System
     public interface Objects
     {
         string Name { get; set; }
+       
     }
     public abstract class Inventory:Objects
     {
@@ -30,6 +31,7 @@ namespace Library_Managment__System
         }
         public Inventory()
         {
+            Name = "";
             Quant = 0;
             Price = 0;
         }
@@ -101,13 +103,14 @@ namespace Library_Managment__System
 
     public class Book : Inventory,Objects
     {
-        public static string B_Path = "D:\\semester4\\oop\\Library-Management-System-main\\Books.csv";
+        public static string B_Path = "E:\\Git Repos\\Library-Management-System\\Books.CSV";
         public string Name{ get; set; }
         
         public string Author, Year;
 
         public Book()
         {
+            Name = "";
             Author = "";
             Year = "";
         }
@@ -140,7 +143,7 @@ namespace Library_Managment__System
     }
         public class DVD : Inventory,Objects
         {
-        public static string DVD_Path = "D:\\semester4\\oop\\Library-Management-System-main\\DVDS.csv";
+        public static string DVD_Path = "E:\\Git Repos\\Library-Management-System\\DVDS.CSV";
 
         public string Name { get; set; }
             private string genre = "";
