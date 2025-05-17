@@ -1,87 +1,44 @@
-﻿using System;
+﻿//using CSVClass;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
+using System.Reflection;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using Inventory;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
+//using Inventory;
 
 namespace Library_Managment__System
 {
+
     public partial class Old_Member : Form
     {
-        public static string name = "Unspecified", phone = "Unspecified", book_name = "Unspecified", book_author = "Unspecified", book_year = "Unspecified",
-            book_price = "Unspecified", book_quant = "Unspecified";
+        public static int Total=0;
+        
+        List<Objects> Checkout_list = new List<Objects>();
 
-        // Assuming this is a list of books. Replace with a list of members if necessary.
-        public List<Book> Booklist = Book.Readbooks();
-
+        public int I = 1;
         public Old_Member()
         {
+
             InitializeComponent();
-            InitializeComboBox();
-        }
-
-        private void InitializeComboBox()
-        {
-            // Set ComboBox data source to the list of books (or members)
-            comboBox1.DataSource = Booklist;
-            comboBox1.DisplayMember = "Name"; // Display book names (or member names)
-            comboBox1.ValueMember = "Name";   // Value stored when an item is selected (book name)
-
-            // Enable AutoComplete for ComboBox
-            comboBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;  // Suggest matching items as the user types
-            comboBox1.AutoCompleteSource = AutoCompleteSource.ListItems; // Use the list items as suggestions
+            Inventory.books = CsvFile<Book>.Read(Book.B_Path, new Book.BookMap());
+            Inventory.DVDS = CsvFile<DVD>.Read(DVD.DVD_Path, new DVD.DVDMap());
+            Members.Memberlist = CsvFile<Members>.Read(Members.M_Path, new Members.MemberMap());
         }
 
         private void Search_btn_Click(object sender, EventArgs e)
         {
-            name = old_name.Text;
-            phone = phone_number.Text;
 
-            // Assuming Book_Name is text input to search for a book by name
-            Book found_book = Book.Search(comboBox1.Text);
-            if (found_book != null)
-            {
-
-                book_name = found_book.Name;
-                book_author = found_book.Author;
-                book_year = found_book.Year;
-                book_price = found_book.price.ToString();
-                book_quant = found_book.quant.ToString();
-
-                Check_out form = new Check_out();
-                this.Close();
-                form.Show();
-            }
-            else
-            {
-                MessageBox.Show("The book does not exist.");
-            }
+            int index = CsvFile<Book>.Search(Book.books, BOOKS_COMBO.Text);
+            if (index == -1) { MessageBox.Show("not found"); }
+            else { MessageBox.Show("found"); }
         }
-
-        private void Old_Member_Load(object sender, EventArgs e)
-        {
-            // Any initialization when the form loads
-        }
-
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // Handle list box changes if needed
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // Handle ComboBox selection change if necessary
-            // For instance, show details based on selected book/member
-            comboBox1.DisplayMember = "Name";
-        }
-
-        private void old_name_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void phone_number_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -89,7 +46,115 @@ namespace Library_Managment__System
         private void phone_number_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
                 e.Handled = true;
+            }
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int index = CsvFile<DVD>.Search(DVD.DVDS, DVD_COMBO.Text);
+            if (index == -1) { MessageBox.Show("not found"); }
+            else { MessageBox.Show("found"); }
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            int index = CsvFile<Members>.Search(Members.Memberlist, old_name.Text);
+            if (index == -1)
+            {
+                MessageBox.Show("Check Member credentials"); this.Close();
+            }
+            else if (Members.Memberlist[index].Name == old_name.Text && Members.Memberlist[index].PhoneNumber == phone_number.Text)
+            {
+                MessageBox.Show("Bono");
+            }
+            else
+            {
+                MessageBox.Show("Wrong Phone Number Please Check");
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int index = CsvFile<Book>.Search(Book.books, BOOKS_COMBO.Text);
+            if (index == -1) { MessageBox.Show("not found"); }
+            else
+            {
+                MessageBox.Show("found");
+                Checkout_list.Add(Book.books[index]);
+                CHECKOUT.Text += $" {I} : {Book.books[index].Name} $ {Book.books[index].price}\n";
+                I++;
+                Total += Book.books[index].price;
+                Total_Check.Text = $"Total : ${Total}";
+
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int index = CsvFile<DVD>.Search(DVD.DVDS, DVD_COMBO.Text);
+            if (index == -1) { MessageBox.Show("not found"); }
+            else
+            {
+                MessageBox.Show("found");
+                Checkout_list.Add(DVD.DVDS[index]);
+                CHECKOUT.Text += $" {I} : {DVD.DVDS[index].Name} $ {DVD.DVDS[index].price}\n";
+                int i = 0;
+                foreach (var item in Checkout_list) { MessageBox.Show(Checkout_list[i].Name.ToString()); i++; }
+                I++;
+                Total += DVD.DVDS[index].price;
+                Total_Check.Text = $"Total : ${Total}";
+
+            }
+        }
+
+        private void phone_number_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            int ind = int.Parse(Delete_Index.Text);
+            Checkout_list.RemoveAt(ind - 1);
+            CHECKOUT.Text = "";
+            I = 1;
+            Total = 0;
+            foreach (var item in Checkout_list)
+            {
+                if (item is Book book)
+                {
+                    Book booky = item as Book;
+
+                    CHECKOUT.Text += $" {I} : {item.Name} $ {booky.price}\n";
+                    I++;
+                    Total+= booky.price;
+                  
+                }
+                else
+                {
+                    DVD DVDY = item as DVD;
+                    CHECKOUT.Text += $" {I} : {item.Name} $ {DVDY.price}\n";
+                    I++;
+                    Total += DVDY.price;
+
+                }
+
+            }
+            Total_Check.Text = $"Total : ${Total}";
+            
+
+        }
+
+        private void CHECKOUT_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Total_Check_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

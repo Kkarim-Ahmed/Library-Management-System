@@ -59,5 +59,15 @@ namespace WinFormsApp1.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2025_05_15_at_01_50_12_c662af82 {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2025-05-15 at 01.50.12_c662af82", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

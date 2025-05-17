@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CsvHelper.Configuration;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,21 +17,23 @@ namespace Library_Managment__System
         public Login_form()
         {
             InitializeComponent();
+
         }
 
         private void login_Click(object sender, EventArgs e)
-        {
-           // if (textBox1.Text == "820366" && UserID_TB.Text == "231027188") ;
-            {
-               // MessageBox.Show("Wellcome ENG : Farah ");
-                Home_form form = new Home_form();
+        {/*
+            if ((UserID_TB.Text == "231027188" && User_pass_TB.Text == "820366") ||
+                (UserID_TB.Text == "231027652" && User_pass_TB.Text == "880711") ||
+                (UserID_TB.Text == "231027807" && User_pass_TB.Text == "177882"))
+            */{
+                Form form = new Home_form();
                 form.Show();
-            }
+              }/*
+            else { MessageBox.Show("Wrong username or Password"); }*/
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

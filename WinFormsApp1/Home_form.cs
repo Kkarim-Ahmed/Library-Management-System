@@ -12,9 +12,12 @@ namespace Library_Managment__System
 {
     public partial class Home_form : Form
     {
+        public static int x;
+
         public Home_form()
         {
             InitializeComponent();
+            x = 0;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -25,12 +28,14 @@ namespace Library_Managment__System
 
         private void Borrow_btn_Click(object sender, EventArgs e)
         {
+            x = 1;
             Old_Member form = new Old_Member();
             form.Show();
         }
 
         private void Return_btn_Click(object sender, EventArgs e)
         {
+            x = 2;
             Old_Member form = new Old_Member();
             form.Show();
 
@@ -38,6 +43,7 @@ namespace Library_Managment__System
 
         private void Buy_btn_Click(object sender, EventArgs e)
         {
+            x = 3;
             Old_Member form = new Old_Member();
             form.Show();
 
@@ -51,14 +57,19 @@ namespace Library_Managment__System
 
         }
 
-        private void Home_form_Load(object sender, EventArgs e)
-        {
+       // private void Home_form_Load(object sender, EventArgs e)
+        //{
 
-        }
+        //}
 
         private void label1_Click(object sender, EventArgs e)
         {
             label1.Text = $"Memory Used :{Sign_up.Mem()}";
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

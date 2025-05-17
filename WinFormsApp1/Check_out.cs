@@ -1,5 +1,4 @@
-﻿using Inventory;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,35 +11,20 @@ using System.Windows.Forms;
 namespace Library_Managment__System
 {
     public partial class Check_out : Form
-
     {
-        
         public Check_out()
         {
             InitializeComponent();
-            this.Load +=label1_Click;
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-            label1.Text = $"Name : {Old_Member.name}\n";
-            label1.Text += $"ID :{Old_Member.phone} \n";
-            label1.Text += $"trust score : 100%\n";
-            label1.Text += $"Book_name : {Old_Member.book_name}\n";
-            label1.Text += $"Book_Author : {Old_Member.book_author}\n";
-            label1.Text += $"Year : {Old_Member.book_year}\n";
-            label1.Text += $"Book_Price : {Old_Member.book_price}\n";
+            label1.Text = "ali";
+            label1.Text = "moahemd";
         }
 
         private void Done_Click(object sender, EventArgs e)
         {
-            List<Book> Booklist = Book.Readbooks();
-            int index = Book.Search(Booklist, Old_Member.book_name);
-            if (index != -1)
-            {
-                Booklist[index].quant-=1;
-                Book.WriteBooks(Booklist);
-            }
             this.Close();
   
         }
