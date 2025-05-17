@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using Inventory;
+using CSVClass;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Diagnostics.Eventing.Reader;
+
 
 namespace Library_Managment__System
 {
@@ -13,7 +16,7 @@ namespace Library_Managment__System
             book_price = "Unspecified", book_quant = "Unspecified";
 
         // Assuming this is a list of books. Replace with a list of members if necessary.
-        public List<Book> Booklist = Book.Readbooks();
+        public List<Book> Booklist = CsvFile<Book>.Read(Book.BOOK_Fpath,new Book.BookMap());
 
         public Old_Member()
         {
@@ -39,15 +42,16 @@ namespace Library_Managment__System
             phone = phone_number.Text;
 
             // Assuming Book_Name is text input to search for a book by name
-            Book found_book = Book.Search(comboBox1.Text);
-            if (found_book != null)
+            int index = CsvFile<Book>.Search(Booklist, comboBox1.Text);
+
+            if (index != null)
             {
 
-                book_name = found_book.Name;
-                book_author = found_book.Author;
-                book_year = found_book.Year;
-                book_price = found_book.price.ToString();
-                book_quant = found_book.quant.ToString();
+                book_name = Booklist[index].Name;
+                book_author = Booklist[index].Author;
+                book_year = Booklist[index].Year;
+                book_price = Booklist[index].price.ToString();
+                book_quant = Booklist[index].quant.ToString();
 
                 Check_out form = new Check_out();
                 this.Close();

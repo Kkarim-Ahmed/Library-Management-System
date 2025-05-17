@@ -6,9 +6,14 @@ using System.Windows.Forms;
 using CsvHelper;
 using System.Globalization;
 using CsvHelper.Configuration;
+using WinFormsApp1;
+using CSVClass;
 
-namespace Inventory
+namespace Inventory {
+    public interface Objects
 {
+    string Name { get; set; }
+} 
     public abstract class Inventory
     {
         //D:\New folder (3)
@@ -36,8 +41,9 @@ namespace Inventory
         public virtual void add_item() { }
     }
 
-    public class Book : Inventory
+    public class Book : Inventory,Objects
     {
+        public static string BOOK_Fpath = "D:\\New folder (3)\\Books.csv";
         public string Author {get;set;}
         public string Year { get; set; }
 
@@ -199,7 +205,7 @@ namespace Inventory
                 return -1 ;
             }
         }
-        public sealed class BookMap : ClassMap<Book>
+        public class BookMap : ClassMap<Book>
         {
             public BookMap()
             {
