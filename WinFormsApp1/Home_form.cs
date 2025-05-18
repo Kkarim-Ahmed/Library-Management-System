@@ -28,16 +28,14 @@ namespace Library_Managment__System
 
         private void Borrow_btn_Click(object sender, EventArgs e)
         {
-            x = 1;
+            key = 2;
             Old_Member form = new Old_Member();
-            key = 0;
             form.Show();
 
         }
 
         private void Return_btn_Click(object sender, EventArgs e)
         {
-            x = 2;
             Old_Member form = new Old_Member();
                 form.Show();
             key = 1;
@@ -47,7 +45,6 @@ namespace Library_Managment__System
         private void Buy_btn_Click(object sender, EventArgs e)
         {
             key = 0;
-            x = 3;
             Old_Member form = new Old_Member();
                 form.Show();
 
