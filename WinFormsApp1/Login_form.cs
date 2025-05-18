@@ -17,6 +17,10 @@ namespace Library_Managment__System
 
         public Login_form()
         {
+            Inventory.books = CsvFile<Book>.Read(Book.B_Path, new Book.BookMap());
+            Inventory.DVDS = CsvFile<DVD>.Read(DVD.DVD_Path, new DVD.DVDMap());
+            Members.Memberlist = CsvFile<Members>.Read(Members.M_Path, new Members.MemberMap());
+            Borrow.Borrowedlist = CsvFile<Borrow>.Read(Borrow.Borrow_Path, new Borrow.Borrowedmap());
             InitializeComponent();
 
         }

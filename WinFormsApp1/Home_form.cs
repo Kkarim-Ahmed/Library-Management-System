@@ -12,12 +12,11 @@ namespace Library_Managment__System
     public partial class Home_form : Form
     {
         public static int key;
-        public static int x;
 
         public Home_form()
         {
             InitializeComponent();
-            x = 0;
+            key = 0;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -38,7 +37,7 @@ namespace Library_Managment__System
         {
             Old_Member form = new Old_Member();
                 form.Show();
-            key = 1;
+               key = 1;
 
         }
 
@@ -57,12 +56,6 @@ namespace Library_Managment__System
 
 
         }
-
-        // private void Home_form_Load(object sender, EventArgs e)
-        //{
-
-        //}
-
         private void label1_Click(object sender, EventArgs e)
         {
             label1.Text = $"Memory Used :{Sign_up.Mem()}";

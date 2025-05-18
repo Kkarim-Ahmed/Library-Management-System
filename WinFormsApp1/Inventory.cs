@@ -105,7 +105,7 @@ namespace Library_Managment__System
     public class Book : Inventory,Objects
     {
 
-	public static string B_Path = "E:\\Git Repos\\Library-Management-System\\Books.csv";
+	public static string B_Path = "C:\\Users\\Karim Ahmed.KARIM\\Desktop\\New folder\\Books.csv";
         public string Name{ get; set; }
         
         public string Author, Year;
@@ -146,7 +146,7 @@ namespace Library_Managment__System
         {
 	public string Key { get; set; }
 
-	public static string DVD_Path = "E:\\Git Repos\\Library-Management-System\\DVDS.csv";
+	public static string DVD_Path = "C:\\Users\\Karim Ahmed.KARIM\\Desktop\\New folder\\DVDS.csv";
 
         public string Name { get; set; }
             private string genre = "";

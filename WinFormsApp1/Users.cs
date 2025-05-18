@@ -64,7 +64,7 @@ namespace Library_Managment__System {
     {
         public int Key { get; set; }
 
-        public static String M_Path = "E:\\Git Repos\\Library-Management-System\\Members.CSV";
+        public static String M_Path = "C:\\Users\\Karim Ahmed.KARIM\\Desktop\\New folder\\Members.CSV";
         public static List<Members> Memberlist = new List<Members>();
 
 
@@ -142,7 +142,7 @@ namespace Library_Managment__System {
     }
     public class Borrow : Inventory,Objects
     {
-        public static string Borrow_Path = "E:\\Git Repos\\Library-Management-System\\Borrowed.CSV";
+        public static string Borrow_Path = "C:\\Users\\Karim Ahmed.KARIM\\Desktop\\New folder\\Borrowed.CSV";
         public string Name {  get; set; }
         public string Itemname { get; set; }
         public string Itemtype { get; set; }
@@ -164,7 +164,7 @@ namespace Library_Managment__System {
             DueDate dueDate = new DueDate();
 
         }
-        public static List<Borrow> Borrowedlist;
+        public static List<Borrow> Borrowedlist = new List<Borrow>();
         public class Borrowedmap : ClassMap<Borrow>
         {
             public Borrowedmap() {
@@ -181,22 +181,20 @@ namespace Library_Managment__System {
             .Select(r => r)
             .ToList(); ;
             return foundlist;
+        }
+        public static int SearchItemName(List<Borrow> list,string itemname)
+        {
+            return list.FindIndex(i => !string.IsNullOrEmpty(i.Itemname) && i.Itemname.Equals(itemname, StringComparison.OrdinalIgnoreCase));
 
         }
         public void Borrowadd(Borrow borrow)
             {
             CsvFile<Borrow>.Read(Borrow_Path, new Borrowedmap());
-            if (Borrowedlist!=null)
-            {
-                Borrowedlist.Add(borrow);
-            }
-            else
-            {
+            if (Borrowedlist==null)
                 CsvFile<Borrow>.Write(Borrow_Path, Borrowedlist, new Borrow.Borrowedmap());
-                Borrowedlist.Add(borrow);
-            }
-            
-            }
+
+            Borrowedlist.Add(borrow);
+        }
     }
 }
 
