@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace Library_Managment__System
 {
     public partial class Home_form : Form
     {
+        public static int key;
         public static int x;
 
         public Home_form()
@@ -30,34 +30,38 @@ namespace Library_Managment__System
         {
             x = 1;
             Old_Member form = new Old_Member();
+            key = 0;
             form.Show();
+
         }
 
         private void Return_btn_Click(object sender, EventArgs e)
         {
             x = 2;
             Old_Member form = new Old_Member();
-            form.Show();
+                form.Show();
+            key = 1;
 
         }
 
         private void Buy_btn_Click(object sender, EventArgs e)
         {
+            key = 0;
             x = 3;
             Old_Member form = new Old_Member();
-            form.Show();
+                form.Show();
 
         }
 
         private void New_member_btn_Click(object sender, EventArgs e)
         {
             Sign_up form = new Sign_up();
-            form.Show();
+                form.Show();
 
 
         }
 
-       // private void Home_form_Load(object sender, EventArgs e)
+        // private void Home_form_Load(object sender, EventArgs e)
         //{
 
         //}
@@ -70,6 +74,11 @@ namespace Library_Managment__System
         private void label2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Home_form_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

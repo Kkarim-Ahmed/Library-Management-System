@@ -1,6 +1,7 @@
 ﻿//using CSVClass;
 //using CSVClass;
 using CsvHelper.Configuration;
+using Library_Managment__System;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +12,10 @@ namespace Library_Managment__System
 {
     public interface Objects
     {
-        string Name { get; set; }
+        public string Name { get; set; }
     }
-    public abstract class Inventory:Objects
+    }
+    public abstract class Inventory: Objects
     {
         public string Name { get; set;}
         public static List<Book> books = new List<Book>();
@@ -30,6 +32,7 @@ namespace Library_Managment__System
         }
         public Inventory()
         {
+            Name = "";
             Quant = 0;
             Price = 0;
         }
@@ -101,7 +104,8 @@ namespace Library_Managment__System
 
     public class Book : Inventory,Objects
     {
-        public static string B_Path = "D:\\semester4\\oop\\Library-Management-System-main\\Books.csv";
+
+	public static string B_Path = "E:\\Git Repos\\Library-Management-System\\Books.csv";
         public string Name{ get; set; }
         
         public string Author, Year;
@@ -140,7 +144,9 @@ namespace Library_Managment__System
     }
         public class DVD : Inventory,Objects
         {
-        public static string DVD_Path = "D:\\semester4\\oop\\Library-Management-System-main\\DVDS.csv";
+	public string Key { get; set; }
+
+	public static string DVD_Path = "E:\\Git Repos\\Library-Management-System\\DVDS.csv";
 
         public string Name { get; set; }
             private string genre = "";
@@ -194,4 +200,3 @@ namespace Library_Managment__System
                     d.Name.Equals(dvd.Name, StringComparison.OrdinalIgnoreCase));
             }
         }
-    }

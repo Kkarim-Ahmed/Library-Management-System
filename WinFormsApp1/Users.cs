@@ -35,7 +35,9 @@ namespace Library_Managment__System {
        public class Admins : User,Objects
     {
         public string Name { get; set; }
-        public static List<Admins> Adminss = new List<Admins>();
+		public int Key { get; set; }
+
+		public static List<Admins> Adminss = new List<Admins>();
         
 
         // Encapsulation with properties
@@ -58,7 +60,9 @@ namespace Library_Managment__System {
 
         public class Members : User,Objects
         {
-        public static String M_Path = "D:\\semester4\\oop\\Library-Management-System-main\\Members.csv";
+		public int Key { get; set; }
+
+		public static String M_Path = "D:\\semester4\\oop\\Library-Management-System-main\\Members.csv";
         public static List<Members> Memberlist = new List<Members>();
 
 

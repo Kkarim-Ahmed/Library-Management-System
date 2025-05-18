@@ -9,6 +9,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 //using Inventory;
 
@@ -17,32 +18,34 @@ namespace Library_Managment__System
 
     public partial class Old_Member : Form
     {
-        public static int Total=0;
-        
+        public static int Total = 0;
+
         List<Objects> Checkout_list = new List<Objects>();
 
         public int I = 1;
         public Old_Member()
         {
-
-            InitializeComponent();
             Inventory.books = CsvFile<Book>.Read(Book.B_Path, new Book.BookMap());
             Inventory.DVDS = CsvFile<DVD>.Read(DVD.DVD_Path, new DVD.DVDMap());
             Members.Memberlist = CsvFile<Members>.Read(Members.M_Path, new Members.MemberMap());
+            InitializeComponent();
+            BOOKS_COMBO.DataSource = Book.books;
+            BOOKS_COMBO.DisplayMember = "Name";
+            BOOKS_COMBO.ValueMember = "Name"; ;
+            BOOKS_COMBO.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            BOOKS_COMBO.AutoCompleteSource = AutoCompleteSource.ListItems;
+            BOOKS_COMBO.DropDownStyle = ComboBoxStyle.DropDown;
+
+            DVD_COMBO.DataSource = DVD.DVDS;
+            DVD_COMBO.DisplayMember = "Name";
+            DVD_COMBO.ValueMember = "Name";
+            DVD_COMBO.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            DVD_COMBO.AutoCompleteSource = AutoCompleteSource.ListItems;
+            DVD_COMBO.DropDownStyle = ComboBoxStyle.DropDown;
+
+
+
         }
-
-        private void Search_btn_Click(object sender, EventArgs e)
-        {
-
-            int index = CsvFile<Book>.Search(Book.books, BOOKS_COMBO.Text);
-            if (index == -1) { MessageBox.Show("not found"); }
-            else { MessageBox.Show("found"); }
-        }
-        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void phone_number_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
@@ -50,14 +53,6 @@ namespace Library_Managment__System
                 e.Handled = true;
             }
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            int index = CsvFile<DVD>.Search(DVD.DVDS, DVD_COMBO.Text);
-            if (index == -1) { MessageBox.Show("not found"); }
-            else { MessageBox.Show("found"); }
-
-        }
-
         private void button5_Click(object sender, EventArgs e)
         {
             int index = CsvFile<Members>.Search(Members.Memberlist, old_name.Text);
@@ -85,8 +80,10 @@ namespace Library_Managment__System
                 Checkout_list.Add(Book.books[index]);
                 CHECKOUT.Text += $" {I} : {Book.books[index].Name} $ {Book.books[index].price}\n";
                 I++;
+                if (Home_form.key==0)
                 Total += Book.books[index].price;
-                Total_Check.Text = $"Total : ${Total}";
+                if (Home_form.key == 0)
+                    Total_Check.Text = $"Total : ${Total}";
 
             }
         }
@@ -100,18 +97,12 @@ namespace Library_Managment__System
                 MessageBox.Show("found");
                 Checkout_list.Add(DVD.DVDS[index]);
                 CHECKOUT.Text += $" {I} : {DVD.DVDS[index].Name} $ {DVD.DVDS[index].price}\n";
-                int i = 0;
-                foreach (var item in Checkout_list) { MessageBox.Show(Checkout_list[i].Name.ToString()); i++; }
                 I++;
+                if (Home_form.key==0)
                 Total += DVD.DVDS[index].price;
                 Total_Check.Text = $"Total : ${Total}";
 
             }
-        }
-
-        private void phone_number_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -129,8 +120,8 @@ namespace Library_Managment__System
 
                     CHECKOUT.Text += $" {I} : {item.Name} $ {booky.price}\n";
                     I++;
-                    Total+= booky.price;
-                  
+                    Total += booky.price;
+
                 }
                 else
                 {
@@ -143,18 +134,53 @@ namespace Library_Managment__System
 
             }
             Total_Check.Text = $"Total : ${Total}";
-            
-
         }
 
-        private void CHECKOUT_Click(object sender, EventArgs e)
+        private void Old_Member_Load(object sender, EventArgs e)
         {
+           
 
+        
         }
 
-        private void Total_Check_Click(object sender, EventArgs e)
+        private void CheckOut_Final_Click(object sender, EventArgs e)
         {
+            {
+                foreach (var item in Checkout_list)
+                {
+                    if (item is Book book)
+                    {
+                        Book booky = item as Book;
 
+                        int index = CsvFile<Book>.Search(Book.books, booky.Name);
+                        if (Home_form.key == 0)
+                            Book.books[index].quant--;
+                        else if (Home_form.key == 1)
+                            Book.books[index].quant++;
+                        I++;
+
+
+                    }
+                    else
+                    {
+                        DVD DVDY = item as DVD;
+                        int index = CsvFile<DVD>.Search(DVD.DVDS, DVDY.Name);
+                        if (Home_form.key == 0)
+                            DVD.DVDS[index].quant--;
+                        else if (Home_form.key == 1) 
+                            DVD.DVDS[index].quant++;
+                            I++;
+                    }
+                }
+                CsvFile<DVD>.Write(DVD.DVD_Path, DVD.DVDS, new DVD.DVDMap());
+                CsvFile<Book>.Write(Book.B_Path, Book.books, new Book.BookMap());
+                Form form = new Home_form();
+                this.Close();
+                MessageBox.Show("Transaction Complete");
+
+            }
+            Total = 0;
         }
+        
     }
 }

@@ -80,6 +80,7 @@
             // 
             NBook_author.Location = new Point(44, 126);
             NBook_author.Margin = new Padding(4, 3, 4, 3);
+            NBook_author.MaxLength = 16;
             NBook_author.Name = "NBook_author";
             NBook_author.Size = new Size(116, 23);
             NBook_author.TabIndex = 2;
@@ -164,6 +165,7 @@
             // quant_Txtbox
             // 
             quant_Txtbox.Location = new Point(412, 55);
+            quant_Txtbox.MaxLength = 3;
             quant_Txtbox.Name = "quant_Txtbox";
             quant_Txtbox.Size = new Size(100, 23);
             quant_Txtbox.TabIndex = 11;
@@ -172,9 +174,11 @@
             // NDvd_quant
             // 
             NDvd_quant.Location = new Point(426, 329);
+            NDvd_quant.MaxLength = 3;
             NDvd_quant.Name = "NDvd_quant";
             NDvd_quant.Size = new Size(116, 23);
             NDvd_quant.TabIndex = 22;
+            NDvd_quant.KeyPress += NDvd_quant_KeyPress;
             // 
             // label5
             // 
@@ -188,9 +192,11 @@
             // NDvd_price
             // 
             NDvd_price.Location = new Point(221, 329);
+            NDvd_price.MaxLength = 11;
             NDvd_price.Name = "NDvd_price";
             NDvd_price.Size = new Size(116, 23);
             NDvd_price.TabIndex = 23;
+            NDvd_price.KeyPress += NDvd_price_KeyPress;
             // 
             // label6
             // 
@@ -230,6 +236,7 @@
             NDvd_year.Name = "NDvd_year";
             NDvd_year.Size = new Size(116, 23);
             NDvd_year.TabIndex = 16;
+            NDvd_year.KeyPress += NDvd_year_KeyPress;
             // 
             // NDvd_genre
             // 
@@ -243,6 +250,7 @@
             // 
             NDvd_name.Location = new Point(44, 255);
             NDvd_name.Margin = new Padding(4, 3, 4, 3);
+            NDvd_name.MaxLength = 16;
             NDvd_name.Name = "NDvd_name";
             NDvd_name.Size = new Size(116, 23);
             NDvd_name.TabIndex = 14;
@@ -326,8 +334,6 @@
             Margin = new Padding(4, 3, 4, 3);
             Name = "ADD_BOOK";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "ADD_item";
-            Load += ADD_BOOK_Load;
             ResumeLayout(false);
             PerformLayout();
 
