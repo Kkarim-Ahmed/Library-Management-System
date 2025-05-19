@@ -21,7 +21,7 @@ namespace Library_Managment__System
 
     public partial class Old_Member : Form
     {
-        public static int Total = 0;
+        public static double Total = 0;
 
         List<Objects> Checkout_list = new List<Objects>();// Buy List
         List<Borrow> Checkout_borrowlist = new List<Borrow>();//Borrow , return  list
@@ -99,7 +99,7 @@ namespace Library_Managment__System
                 else
                 {
                     MessageBox.Show("found");
-                    Checkout_borrowlist.Add(new Borrow(old_name.Text, Book.books[index].Name, "Book", DateAndTime.DateString));
+                    Checkout_borrowlist.Add(new Borrow(old_name.Text.ToLower(), Book.books[index].Name, "Book", DateAndTime.DateString));
                     CHECKOUT.Text += $" ({I})_BOOK :: {Book.books[index].Name}\n";
                     Total_Check.Text = $"Borrowing {I} Item(s)";
                     I++;
@@ -109,7 +109,7 @@ namespace Library_Managment__System
             else if (Home_form.key == 1)// Return Form
             {
                 int index;
-                var list = Borrow.FindBorrowed(old_name.Text);
+                var list = Borrow.FindBorrowed(old_name.Text.ToLower());
                 index = CsvFile<Book>.Search(Book.books, BOOKS_COMBO.Text);
                 foreach (var item in list)
                 {
@@ -119,6 +119,7 @@ namespace Library_Managment__System
                         if (index != -1)
                         {
                             Checkout_borrowlist.Add(item);
+                            if (Checkout_borrowlist[I - 1].Duedate == DateTime.Now.ToString()) Total+= Checkout_borrowlist[I-1].price*0.1;
                             break;
                         }
                     }
@@ -156,16 +157,16 @@ namespace Library_Managment__System
                 else
                 {
                     MessageBox.Show("found");
-                    Checkout_borrowlist.Add(new Borrow(old_name.Text, DVD.DVDS[index].Name, "DVD", DateAndTime.DateString));
+                    Checkout_borrowlist.Add(new Borrow(old_name.Text.ToLower(), DVD.DVDS[index].Name, "DVD", DateAndTime.DateString));
                     CHECKOUT.Text += $" ({I})_DVD :: {DVD.DVDS[index].Name} \n";
-                    Total_Check.Text = $"Borrowing {I}";
+                    Total_Check.Text = $"Borrowing {I} Item(s)";
                     I++;
                 }
             }
             else if (Home_form.key == 1)//Return Form
             {
                 int index;
-                var list = Borrow.FindBorrowed(old_name.Text);
+                var list = Borrow.FindBorrowed(old_name.Text.ToLower());
                 index = CsvFile<DVD>.Search(DVD.DVDS, DVD_COMBO.Text);
                 foreach (var item in list)
                 {
@@ -235,11 +236,15 @@ namespace Library_Managment__System
                 
                 foreach (var item in Checkout_borrowlist)
                 {
-                  CHECKOUT.Text += $" ({I++})_{item.Itemtype.ToUpper()} : " +item.Itemname + " Item(s)\n";
+                  CHECKOUT.Text += $" ({I++})_{item.Itemtype.ToUpper()} :: " +item.Itemname+"\n";
                   
                 }
+                if (Home_form.key == 1)
+                    Total_Check.Text = $"Returning {I} Item(s)";
+                    if (Home_form.key ==2)
+                Total_Check.Text = $"Borrowing {I} Item(s)";
+
             }
-            Total_Check.Text = $"Total : ${Total}";
         }
 
         private void Old_Member_Load(object sender, EventArgs e)
@@ -284,14 +289,14 @@ namespace Library_Managment__System
                         if (item.Itemtype.ToLower() == "book")
                         {
                             int index = CsvFile<Book>.Search(Book.books, item.Itemname);
-                            Book.books[index].quant++;
+                            Book.books[index].Borrowed--;
                             int index_1 = Borrow.SearchItemName(Borrow.Borrowedlist, item.Itemname);
                             Borrow.Borrowedlist.RemoveAt(index_1);
                         }
                         else
                         {
                             int index = CsvFile<DVD>.Search(DVD.DVDS, item.Itemname);
-                            DVD.DVDS[index].quant++;
+                            DVD.DVDS[index].Borrowed--;
                             int index_1 = Borrow.SearchItemName(Borrow.Borrowedlist, item.Itemname);
                             Borrow.Borrowedlist.RemoveAt(index_1);
                         }
@@ -308,14 +313,14 @@ namespace Library_Managment__System
                         if (item.Itemtype.ToLower() == "book")
                         {
                             int index = CsvFile<Book>.Search(Book.books, item.Itemname);
-                            Book.books[index].quant--;
+                            Book.books[index].Borrowed++;
                             Borrow.Borrowedlist.Add(item);
                             ;
                         }
                         else
                         {
                             int index = CsvFile<DVD>.Search(DVD.DVDS, item.Itemname);
-                            DVD.DVDS[index].quant--;
+                            DVD.DVDS[index].Borrowed++;
                             Borrow.Borrowedlist.Add(item);
 
                         }

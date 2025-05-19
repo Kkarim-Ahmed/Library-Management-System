@@ -1,4 +1,2 @@
-Name,Genre,Duration,Year,Price,Quant
-DVD_1,DRAMA,230,2018,180,20
-DVD_2,DRAMA,230,2018,180,20
-DVD_3,DRAMA,230,2018,180,20
+Name,Genre,Duration,Year,Price,Quant,Borrowed
+shreet,comedy,10,1991,10,10,0

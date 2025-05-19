@@ -64,7 +64,7 @@ namespace Library_Managment__System {
     {
         public int Key { get; set; }
 
-        public static String M_Path = "C:\\Users\\Karim Ahmed.KARIM\\Desktop\\New folder\\Members.CSV";
+        public static String M_Path = "D:\\Programing\\GitHub Repos\\Library-Management-System\\Members.CSV";
         public static List<Members> Memberlist = new List<Members>();
 
 
@@ -142,7 +142,7 @@ namespace Library_Managment__System {
     }
     public class Borrow : Inventory,Objects
     {
-        public static string Borrow_Path = "C:\\Users\\Karim Ahmed.KARIM\\Desktop\\New folder\\Borrowed.CSV";
+        public static string Borrow_Path = "D:\\Programing\\GitHub Repos\\Library-Management-System\\Borrowed.CSV";
         public string Name {  get; set; }
         public string Itemname { get; set; }
         public string Itemtype { get; set; }

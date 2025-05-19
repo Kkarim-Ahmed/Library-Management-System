@@ -23,9 +23,10 @@ namespace Library_Managment__System
         
         
 
-        private int Quant, Price;
+        private int Quant;
+        private double Price;
 
-        public int price
+        public double price
         {
             get { return Price; }
             set { Price = value; }
@@ -105,24 +106,28 @@ namespace Library_Managment__System
     public class Book : Inventory,Objects
     {
 
-	public static string B_Path = "C:\\Users\\Karim Ahmed.KARIM\\Desktop\\New folder\\Books.csv";
+	public static string B_Path = "D:\\Programing\\GitHub Repos\\Library-Management-System\\Books.csv";
         public string Name{ get; set; }
         
         public string Author, Year;
+
+        public int Borrowed;
 
         public Book()
         {
             Author = "";
             Year = "";
+        Borrowed = 0;
         }
 
-        public Book(string name, string author, string year, int price, int quant)
+        public Book(string name, string author, string year, double price, int quant)
         {
             this.Name = name;
             this.price = price;
             this.Author = author;
             this.Year = year;
             this.quant = quant;
+            this.Borrowed = 0;
         }
         public class BookMap : ClassMap<Book>
         {
@@ -133,6 +138,7 @@ namespace Library_Managment__System
                 Map(m => m.Year).Name("Year");
                 Map(m => m.price).Name("Price");
                 Map(m => m.quant).Name("Quant");
+                Map(m => m.Borrowed).Name("Borrowed");
             }
         }
 
@@ -146,12 +152,13 @@ namespace Library_Managment__System
         {
 	public string Key { get; set; }
 
-	public static string DVD_Path = "C:\\Users\\Karim Ahmed.KARIM\\Desktop\\New folder\\DVDS.csv";
+	public static string DVD_Path = "D:\\Programing\\GitHub Repos\\Library-Management-System\\DVDS.csv";
 
         public string Name { get; set; }
             private string genre = "";
             private string duration ="";
             private string year = "";
+            public int Borrowed;
             public string Year
             {
                 get { return year; }
@@ -171,7 +178,7 @@ namespace Library_Managment__System
             }
             public DVD() { }
 
-            public DVD(string name, string genre, string duration, int price, int quant,string year)
+            public DVD(string name, string genre, string duration, double price, int quant,string year)
             {
                 this.Name = name;
                 this.Genre = genre;
@@ -179,6 +186,7 @@ namespace Library_Managment__System
                 this.price = price;
                 this.quant = quant;
                 this.year = year;
+                this.Borrowed = 0;
             }
         public class DVDMap : ClassMap<DVD>
         {
@@ -190,6 +198,7 @@ namespace Library_Managment__System
                 Map(m => m.Year).Name("Year");
                 Map(m => m.price).Name("Price");
                 Map(m => m.quant).Name("Quant");
+                Map(m => m.Borrowed).Name("Borrowed");
             }
         }
         
