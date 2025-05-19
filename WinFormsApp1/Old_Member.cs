@@ -290,6 +290,7 @@ namespace Library_Managment__System
                         {
                             int index = CsvFile<Book>.Search(Book.books, item.Itemname);
                             Book.books[index].Borrowed--;
+                            Book.books[index].quant++;
                             int index_1 = Borrow.SearchItemName(Borrow.Borrowedlist, item.Itemname);
                             Borrow.Borrowedlist.RemoveAt(index_1);
                         }
@@ -297,6 +298,7 @@ namespace Library_Managment__System
                         {
                             int index = CsvFile<DVD>.Search(DVD.DVDS, item.Itemname);
                             DVD.DVDS[index].Borrowed--;
+                            Book.books[index].quant++;
                             int index_1 = Borrow.SearchItemName(Borrow.Borrowedlist, item.Itemname);
                             Borrow.Borrowedlist.RemoveAt(index_1);
                         }
@@ -314,6 +316,8 @@ namespace Library_Managment__System
                         {
                             int index = CsvFile<Book>.Search(Book.books, item.Itemname);
                             Book.books[index].Borrowed++;
+                            Book.books[index].quant--;
+
                             Borrow.Borrowedlist.Add(item);
                             ;
                         }
@@ -321,6 +325,7 @@ namespace Library_Managment__System
                         {
                             int index = CsvFile<DVD>.Search(DVD.DVDS, item.Itemname);
                             DVD.DVDS[index].Borrowed++;
+                            Book.books[index].quant--;
                             Borrow.Borrowedlist.Add(item);
 
                         }

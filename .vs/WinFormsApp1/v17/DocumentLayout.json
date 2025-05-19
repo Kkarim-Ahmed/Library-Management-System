@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\old_member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|d:\\programing\\github repos\\library-management-system\\winformsapp1\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|D:\\Programing\\GitHub Repos\\Library-Management-System\\winformsapp1\\old_member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\old_member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|d:\\programing\\github repos\\library-management-system\\winformsapp1\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|d:\\programing\\github repos\\library-management-system\\winformsapp1\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -50,12 +50,11 @@
               "RelativeToolTip": "WinFormsApp1\\Methods.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAuwCIAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T22:08:18.541Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-18T22:08:18.541Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Inventory.cs",
               "DocumentMoniker": "D:\\Programing\\GitHub Repos\\Library-Management-System\\WinFormsApp1\\Inventory.cs",
               "RelativeDocumentMoniker": "WinFormsApp1\\Inventory.cs",
@@ -63,8 +62,7 @@
               "RelativeToolTip": "WinFormsApp1\\Inventory.cs",
               "ViewState": "AgIAAIMAAAAAAAAAAAAzwHcAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T19:02:09.873Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-18T19:02:09.873Z"
             },
             {
               "$type": "Document",
@@ -76,8 +74,7 @@
               "RelativeToolTip": "WinFormsApp1\\Home_form.cs",
               "ViewState": "AgIAABgAAAAAAAAAAAAcwCUAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T17:18:12.181Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-18T17:18:12.181Z"
             },
             {
               "$type": "Document",
@@ -89,12 +86,11 @@
               "RelativeToolTip": "WinFormsApp1\\Users.cs",
               "ViewState": "AgIAADcAAAAAAAAAAAAkwJAAAABjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T16:56:58.139Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-18T16:56:58.139Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Old_Member.cs [Design]",
               "DocumentMoniker": "D:\\Programing\\GitHub Repos\\Library-Management-System\\WinFormsApp1\\Old_Member.cs",
               "RelativeDocumentMoniker": "WinFormsApp1\\Old_Member.cs",
@@ -112,7 +108,7 @@
               "RelativeDocumentMoniker": "WinFormsApp1\\Old_Member.cs",
               "ToolTip": "D:\\Programing\\GitHub Repos\\Library-Management-System\\WinFormsApp1\\Old_Member.cs",
               "RelativeToolTip": "WinFormsApp1\\Old_Member.cs",
-              "ViewState": "AgIAAKIAAAAAAAAAAAAAwKsAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAABwBAAAAAAAAAAAkwB8BAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-18T16:30:32.069Z",
               "EditorCaption": ""
