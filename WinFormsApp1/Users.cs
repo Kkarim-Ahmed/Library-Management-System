@@ -94,7 +94,8 @@ namespace Library_Managment__System {
         public string Itemtype { get; set; }
         public string Borrowdate{ get; set; }
         public string Duedate { get; set; }
-        public static List<Borrow> Borrowedlist = new List<Borrow>();
+
+        public static List<Borrow> Borrowedlist = new List<Borrow>(); // Borrowed Items List
 
         //Overriding Default Constructor
         public Borrow() { 

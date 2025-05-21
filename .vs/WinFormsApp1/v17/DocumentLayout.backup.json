@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\Programing\\GitHub Repos\\Library-Management-System\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|d:\\programing\\github repos\\library-management-system\\winformsapp1\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|d:\\programing\\github repos\\library-management-system\\winformsapp1\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -22,20 +26,33 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Inventory.cs",
               "DocumentMoniker": "D:\\Programing\\GitHub Repos\\Library-Management-System\\WinFormsApp1\\Inventory.cs",
               "RelativeDocumentMoniker": "WinFormsApp1\\Inventory.cs",
               "ToolTip": "D:\\Programing\\GitHub Repos\\Library-Management-System\\WinFormsApp1\\Inventory.cs",
               "RelativeToolTip": "WinFormsApp1\\Inventory.cs",
-              "ViewState": "AgIAAKwAAAAAAAAAAAAUwL0AAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAJMAAAAAAAAAAAAwwL0AAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-21T20:58:06.483Z",
               "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Users.cs",
+              "DocumentMoniker": "D:\\Programing\\GitHub Repos\\Library-Management-System\\WinFormsApp1\\Users.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\Users.cs",
+              "ToolTip": "D:\\Programing\\GitHub Repos\\Library-Management-System\\WinFormsApp1\\Users.cs",
+              "RelativeToolTip": "WinFormsApp1\\Users.cs",
+              "ViewState": "AgIAAH4AAAAAAAAAAAAowF4AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T21:22:06.08Z",
               "EditorCaption": ""
             },
             {
@@ -44,7 +61,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Home_form.cs",
               "DocumentMoniker": "D:\\Programing\\GitHub Repos\\Library-Management-System\\WinFormsApp1\\Home_form.cs",
               "RelativeDocumentMoniker": "WinFormsApp1\\Home_form.cs",
@@ -57,15 +74,14 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Home_form.cs [Design]",
               "DocumentMoniker": "D:\\Programing\\GitHub Repos\\Library-Management-System\\WinFormsApp1\\Home_form.cs",
               "RelativeDocumentMoniker": "WinFormsApp1\\Home_form.cs",
               "ToolTip": "D:\\Programing\\GitHub Repos\\Library-Management-System\\WinFormsApp1\\Home_form.cs [Design]",
               "RelativeToolTip": "WinFormsApp1\\Home_form.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-21T20:56:45.485Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-05-21T20:56:45.485Z"
             }
           ]
         }
