@@ -1,6 +1,4 @@
-﻿//using CSVClass;
-//using CSVClass;
-using CsvHelper.Configuration;
+﻿using CsvHelper.Configuration;
 using Library_Managment__System;
 using System;
 using System.Collections.Generic;
@@ -10,58 +8,52 @@ using System.Windows.Forms;
 
 namespace Library_Managment__System
 {
-    public interface Objects
+    public interface Objects //Public Interface Needed For Generic Class
     {
         public string Name { get; set; }
     }
     }
-    public abstract class Inventory: Objects
+    public abstract class Inventory: Objects // Abstract Class Inheriting From Objects Interface
     {
-        public string Name { get; set;}
-        public static List<Book> books = new List<Book>();
-        public static List<DVD> DVDS = new List<DVD>();
-        
-        
-
-        private int Quant;
-        private double Price;
-
-        public double price
+    public static List<Book> books = new List<Book>(); // Creates Static List For Books
+    public static List<DVD> DVDS = new List<DVD>(); // Creates Static List For Books
+    public string Name { get; set; }
+    // Encapsulation
+    private int Quant, Price;
+    public int quant
+        {
+        get { return Quant; }
+        set { Quant = value; }
+        }
+    public int price
         {
             get { return Price; }
             set { Price = value; }
         }
-        public Inventory()
+        public int Borrowed = 0;
+        public Inventory()  // Overriding Default Constructor
         {
             Name = "";
             Quant = 0;
             Price = 0;
         }
-
-        public int quant
-        {
-            get { return Quant; }
-            set { Quant = value; }
-        }
-
-
-
         public static void AddItem(Inventory element)
         {
-            books = CsvFile<Book>.Read(Book.B_Path,new Book.BookMap());
-            DVDS = CsvFile<DVD>.Read(DVD.DVD_Path, new DVD.DVDMap());
+            books = CsvFile<Book>.Read(Book.B_Path,new Book.BookMap()); // Reading CSV For Book
+            DVDS = CsvFile<DVD>.Read(DVD.DVD_Path, new DVD.DVDMap()); // Reading CSV For DVD
 
-            if (element is Book book)
+        if (element is Book book)
             {
                 Book existingBook = Book.Find_Book(book.Name);
-                if (existingBook != null)
+                if (existingBook != null) // Checking If Book Exists
                 {
-                    int index = CsvFile<Book>.Search(books,book.Name);
-                    books[index].quant += book.quant;
+                    int index = CsvFile<Book>.Search(books,book.Name); // Searches For Book Index To Edit
+                    books[index].quant += book.quant; // Adding Quantity If Book Already Exists
                     MessageBox.Show($"Updated quantity for '{existingBook.Name}'. New quantity: {books[index].quant}");
                 }
                 else
                 {
+                // Adds The Book If It Doesnt Exist
                     books.Add(new Book
                     {
                         Name = book.Name,
@@ -73,20 +65,20 @@ namespace Library_Managment__System
                     MessageBox.Show($"Added new book '{book.Name}' to inventory");
 
                 }
+                // Write Data To CSV File
                 CsvFile<Book>.Write(Book.B_Path, books, new Book.BookMap());
-
             }
             else if (element is DVD dvd)
             {
-                DVD existingDVD = DVD.Find_DVD(dvd);
+                DVD existingDVD = DVD.Find_DVD(dvd); // Checks If DVDS Exist
                 if (existingDVD != null)
                 {
-                    existingDVD.quant += dvd.quant;
+                    existingDVD.quant += dvd.quant; // Adds Quantity If DVD Already Exists
                     MessageBox.Show($"Updated quantity for '{existingDVD.Name}'. New quantity: {existingDVD.quant}");
                 }
-
                 else
                 {
+                // Adds The New Book
                     DVDS.Add(new DVD(
                         year: dvd.Year,
                         name: dvd.Name,
@@ -97,38 +89,35 @@ namespace Library_Managment__System
                     ));
                     MessageBox.Show($"Added new book '{dvd.Name}' to inventory");
                 }
+                // Writes Data To CSV File
                 CsvFile<DVD>.Write(DVD.DVD_Path, DVDS, new DVD.DVDMap());
-
             }
         }
     }
 
-    public class Book : Inventory,Objects
+    public class Book : Inventory,Objects // Book Class Inheriting From Inventory Class And Objects Interface
     {
-
-	public static string B_Path = "D:\\Programing\\GitHub Repos\\Library-Management-System\\Books.csv";
-        public string Name{ get; set; }
-        
-        public string Author, Year;
-
-        public int Borrowed;
-
-        public Book()
+	public static string B_Path = "D:\\Programing\\GitHub Repos\\Library-Management-System\\Books.csv"; // Book CSV File Path
+    public string Author, Year;
+    
+    // Overloading Default Constructor
+    public Book() 
         {
             Author = "";
             Year = "";
-        Borrowed = 0;
         }
 
-        public Book(string name, string author, string year, double price, int quant)
+    // Custom Constructor To Set Values
+    public Book(string name, string author, string year, int price, int quant)
         {
             this.Name = name;
             this.price = price;
             this.Author = author;
             this.Year = year;
             this.quant = quant;
-            this.Borrowed = 0;
         }
+
+        //Book Map For CSV Mapping
         public class BookMap : ClassMap<Book>
         {
             public BookMap()
@@ -141,24 +130,22 @@ namespace Library_Managment__System
                 Map(m => m.Borrowed).Name("Borrowed");
             }
         }
-
-        public static new Book Find_Book(string book)
+        
+        
+        public static Book Find_Book(string book)
         {
             return books.FirstOrDefault(b =>
-                b.Name.Equals(book, StringComparison.OrdinalIgnoreCase));
+                b.Name.Equals(book, StringComparison.OrdinalIgnoreCase)) ?? new Book { Name = "Unknown", Author = "N/A" }; ;
         }
     }
         public class DVD : Inventory,Objects
         {
-	public string Key { get; set; }
-
-	public static string DVD_Path = "D:\\Programing\\GitHub Repos\\Library-Management-System\\DVDS.csv";
-
-        public string Name { get; set; }
+        //DVD File Path
+	    public static string DVD_Path = "D:\\Programing\\GitHub Repos\\Library-Management-System\\DVDS.csv";
+            // Encapsulation Properties
             private string genre = "";
             private string duration ="";
             private string year = "";
-            public int Borrowed;
             public string Year
             {
                 get { return year; }
@@ -176,18 +163,20 @@ namespace Library_Managment__System
                 get => duration;
                 set => duration = value;
             }
-            public DVD() { }
 
-            public DVD(string name, string genre, string duration, double price, int quant,string year)
-            {
+            // Default Constructor
+            public DVD() { }
+            // Custom Constructor
+            public DVD(string name, string genre, string duration, int price, int quant,string year) 
+    {
                 this.Name = name;
                 this.Genre = genre;
                 this.Duration = duration;
                 this.price = price;
                 this.quant = quant;
                 this.year = year;
-                this.Borrowed = 0;
             }
+        //DVD Map For CSV Mapping
         public class DVDMap : ClassMap<DVD>
         {
             public DVDMap()
@@ -199,13 +188,14 @@ namespace Library_Managment__System
                 Map(m => m.price).Name("Price");
                 Map(m => m.quant).Name("Quant");
                 Map(m => m.Borrowed).Name("Borrowed");
-            }
+
         }
+    }
         
 
-        public static new DVD Find_DVD(DVD dvd)
+        public static DVD Find_DVD(DVD dvd) // Finds DVD Name From List As Checker
             {
                 return DVDS.FirstOrDefault(d =>
-                    d.Name.Equals(dvd.Name, StringComparison.OrdinalIgnoreCase));
+                    d.Name.Equals(dvd.Name, StringComparison.OrdinalIgnoreCase)) ?? new DVD { Name = "Unknown", Genre = "N/A" }; ;
             }
         }
