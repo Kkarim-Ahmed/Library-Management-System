@@ -49,6 +49,9 @@ namespace Library_Managment__System
             label5 = new Label();
             Total_Check = new Label();
             CheckOut_Final = new Button();
+            Search_label = new Label();
+            SearchBooks_label = new Label();
+            SearchDVD_label = new Label();
             ((System.ComponentModel.ISupportInitialize)bookBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bookBindingSource1).BeginInit();
             SuspendLayout();
@@ -226,11 +229,38 @@ namespace Library_Managment__System
             CheckOut_Final.UseVisualStyleBackColor = true;
             CheckOut_Final.Click += CheckOut_Final_Click;
             // 
+            // Search_label
+            // 
+            Search_label.AutoSize = true;
+            Search_label.Location = new Point(43, 103);
+            Search_label.Name = "Search_label";
+            Search_label.Size = new Size(0, 15);
+            Search_label.TabIndex = 22;
+            // 
+            // SearchBooks_label
+            // 
+            SearchBooks_label.AutoSize = true;
+            SearchBooks_label.Location = new Point(40, 210);
+            SearchBooks_label.Name = "SearchBooks_label";
+            SearchBooks_label.Size = new Size(0, 15);
+            SearchBooks_label.TabIndex = 23;
+            // 
+            // SearchDVD_label
+            // 
+            SearchDVD_label.AutoSize = true;
+            SearchDVD_label.Location = new Point(43, 351);
+            SearchDVD_label.Name = "SearchDVD_label";
+            SearchDVD_label.Size = new Size(0, 15);
+            SearchDVD_label.TabIndex = 24;
+            // 
             // Old_Member
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(623, 463);
+            Controls.Add(SearchDVD_label);
+            Controls.Add(SearchBooks_label);
+            Controls.Add(Search_label);
             Controls.Add(CheckOut_Final);
             Controls.Add(Total_Check);
             Controls.Add(label5);
@@ -252,7 +282,6 @@ namespace Library_Managment__System
             Name = "Old_Member";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Complete Checkout";
-            Load += Old_Member_Load;
             ((System.ComponentModel.ISupportInitialize)bookBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)bookBindingSource1).EndInit();
             ResumeLayout(false);
@@ -281,5 +310,8 @@ namespace Library_Managment__System
         private Label label5;
         private Label Total_Check;
         private Button CheckOut_Final;
+        private Label Search_label;
+        private Label SearchBooks_label;
+        private Label SearchDVD_label;
     }
 }

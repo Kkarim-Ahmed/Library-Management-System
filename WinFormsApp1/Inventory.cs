@@ -44,12 +44,11 @@ namespace Library_Managment__System
 
         if (element is Book book)
             {
-                Book existingBook = Book.Find_Book(book.Name);
-                if (existingBook != null) // Checking If Book Exists
+            int index = CsvFile<Book>.Search(books, element.Name);// Searches For Book Index To Edit
+            if (index != -1) // Checking If Book Exists
                 {
-                    int index = CsvFile<Book>.Search(books,book.Name); // Searches For Book Index To Edit
                     books[index].quant += book.quant; // Adding Quantity If Book Already Exists
-                    MessageBox.Show($"Updated quantity for '{existingBook.Name}'. New quantity: {books[index].quant}");
+                    MessageBox.Show($"Updated quantity for '{books[index].Name}'. New quantity: {books[index].quant}");
                 }
                 else
                 {
@@ -135,7 +134,7 @@ namespace Library_Managment__System
         public static Book Find_Book(string book)
         {
             return books.FirstOrDefault(b =>
-                b.Name.Equals(book, StringComparison.OrdinalIgnoreCase)) ?? new Book { Name = "Unknown", Author = "N/A" }; ;
+                b.Name.Equals(book, StringComparison.OrdinalIgnoreCase));
         }
     }
         public class DVD : Inventory,Objects
@@ -196,6 +195,6 @@ namespace Library_Managment__System
         public static DVD Find_DVD(DVD dvd) // Finds DVD Name From List As Checker
             {
                 return DVDS.FirstOrDefault(d =>
-                    d.Name.Equals(dvd.Name, StringComparison.OrdinalIgnoreCase)) ?? new DVD { Name = "Unknown", Genre = "N/A" }; ;
+                    d.Name.Equals(dvd.Name, StringComparison.OrdinalIgnoreCase)) ;
             }
         }
