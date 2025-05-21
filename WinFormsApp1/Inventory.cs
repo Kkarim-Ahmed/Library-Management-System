@@ -69,11 +69,11 @@ namespace Library_Managment__System
             }
             else if (element is DVD dvd)
             {
-                DVD existingDVD = DVD.Find_DVD(dvd); // Checks If DVDS Exist
-                if (existingDVD != null)
+            int index = CsvFile<DVD>.Search(DVDS, element.Name); // Checks If DVDS Exist
+                if (index != -1)
                 {
-                    existingDVD.quant += dvd.quant; // Adds Quantity If DVD Already Exists
-                    MessageBox.Show($"Updated quantity for '{existingDVD.Name}'. New quantity: {existingDVD.quant}");
+                DVDS[index].quant += dvd.quant; // Adds Quantity If DVD Already Exists
+                    MessageBox.Show($"Updated quantity for '{DVDS[index].Name}'. New quantity: {DVDS[index].quant}");
                 }
                 else
                 {
@@ -96,7 +96,7 @@ namespace Library_Managment__System
 
     public class Book : Inventory,Objects // Book Class Inheriting From Inventory Class And Objects Interface
     {
-	public static string B_Path = "D:\\Programing\\GitHub Repos\\Library-Management-System\\Books.csv"; // Book CSV File Path
+	public static string B_Path = "Books.csv"; // Book CSV File Path
     public string Author, Year;
     
     // Overloading Default Constructor
@@ -129,18 +129,11 @@ namespace Library_Managment__System
                 Map(m => m.Borrowed).Name("Borrowed");
             }
         }
-        
-        
-        public static Book Find_Book(string book)
-        {
-            return books.FirstOrDefault(b =>
-                b.Name.Equals(book, StringComparison.OrdinalIgnoreCase));
-        }
     }
         public class DVD : Inventory,Objects
         {
         //DVD File Path
-	    public static string DVD_Path = "D:\\Programing\\GitHub Repos\\Library-Management-System\\DVDS.csv";
+	    public static string DVD_Path = "DVDS.csv";
             // Encapsulation Properties
             private string genre = "";
             private string duration ="";
@@ -188,13 +181,6 @@ namespace Library_Managment__System
                 Map(m => m.quant).Name("Quant");
                 Map(m => m.Borrowed).Name("Borrowed");
 
-        }
-    }
-        
-
-        public static DVD Find_DVD(DVD dvd) // Finds DVD Name From List As Checker
-            {
-                return DVDS.FirstOrDefault(d =>
-                    d.Name.Equals(dvd.Name, StringComparison.OrdinalIgnoreCase)) ;
             }
         }
+    }

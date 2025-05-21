@@ -33,7 +33,7 @@ namespace Library_Managment__System {
 
     public class Members : User, Objects // Member Class Inheriting From Objects Interface For Csv
     {
-        public static String M_Path = "D:\\Programing\\GitHub Repos\\Library-Management-System\\Members.CSV"; // CSV File Path
+        public static String M_Path = "Members.CSV"; // CSV File Path
         public static List<Members> Memberlist = new List<Members>(); // For Reading CSV Member list
         public string PhoneNumber { get; set; }
         public string Depart { get; set; }
@@ -89,7 +89,7 @@ namespace Library_Managment__System {
     public class Borrow : Inventory,Objects // Borrow Class Inheriting From Objects Interface
     {
         // Path For Borrowed Items CSV File
-        public static string Borrow_Path = "D:\\Programing\\GitHub Repos\\Library-Management-System\\Borrowed.CSV"; 
+        public static string Borrow_Path = "Borrowed.CSV"; 
         public string Itemname { get; set; }
         public string Itemtype { get; set; }
         public string Borrowdate{ get; set; }

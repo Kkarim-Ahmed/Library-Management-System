@@ -235,8 +235,8 @@ namespace Library_Managment__System
                   CHECKOUT.Text += $" ({I})_{item.Itemtype.ToUpper()} :: " +item.Itemname+"\n";
                   I++;
                 }
-                if (Home_form.key == 1) Total_Check.Text = $"Returning {I} Item(s)";
-                if (Home_form.key == 2) Total_Check.Text = $"Borrowing {I} Item(s)";
+                if (Home_form.key == 1) Total_Check.Text = $"Returning {I-1} Item(s)";
+                if (Home_form.key == 2) Total_Check.Text = $"Borrowing {I-1} Item(s)";
 
             }
         }
