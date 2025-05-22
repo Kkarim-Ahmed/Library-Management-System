@@ -210,15 +210,15 @@ namespace Library_Managment__System
                 {
                     if (item is Book book)//applying polymorpism
                     {
-                        Book booky = item as Book;//applying casting 
+                        Book? booky = item as Book;//applying casting 
                         //updating the GUI
-                        CHECKOUT.Text += $" ({I})_BOOK :: {item.Name} $ {booky.price}\n";
+                        CHECKOUT.Text += $" ({I})_BOOK :: {item.Name} $ {booky?.price}\n";
                         Total += booky.price;
                         I++;
                     }
                     else
                     {
-                        DVD DVDY = item as DVD;//applying casting 
+                        DVD? DVDY = item as DVD;//applying casting 
                         //applying Casting
                         CHECKOUT.Text += $" ({I})_DVD :: {item.Name} $ {DVDY.price}\n";
                         Total += DVDY.price;
@@ -249,13 +249,13 @@ namespace Library_Managment__System
                     {
                         if (item is Book book)
                         {
-                            Book booky = item as Book;//applying Casting
+                            Book? booky = item as Book;//applying Casting
                             int index = CsvFile<Book>.Search(Book.books, booky.Name);//serahing in Books List
                             Book.books[index].quant--;//updating Quantity
                         }
                         else
                         {
-                            DVD DVDY = item as DVD;//applying Casting
+                            DVD? DVDY = item as DVD;//applying Casting
                             int index = CsvFile<DVD>.Search(DVD.DVDS, DVDY.Name);//serahing in DVD List
                             DVD.DVDS[index].quant--;//updating Quantity
                         }
