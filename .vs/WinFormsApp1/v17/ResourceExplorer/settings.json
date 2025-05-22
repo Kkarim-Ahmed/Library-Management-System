@@ -1,1 +1,17 @@
-{"ShowEmptyProjects":false,"CustomColumnOrderings":{"name":0,"type":1,"neutral-value":2,"neutral-comment":3},"ShowValidationErrors":true,"SelectedResourceGroupsByProjectFilePath":{"D:\\semester4\\oop\\Library-Management-System-main\\WinFormsApp1\\WinFormsApp1.csproj":["D:\\semester4\\oop\\Library-Management-System-main\\WinFormsApp1\\Old_Member.resx"]},"VisibleColumnKeys":["name","neutral-value","neutral-comment"]}
+{
+  "ShowEmptyProjects": false,
+  "SelectedGroups": [],
+  "ExpandedProjects": [],
+  "EnableSpellChecker": true,
+  "ColumnOrder": [
+    "name",
+    "type",
+    "neutral-value",
+    "neutral-comment"
+  ],
+  "VisibleColumnKeys": [
+    "name",
+    "neutral-comment",
+    "neutral-value"
+  ]
+}

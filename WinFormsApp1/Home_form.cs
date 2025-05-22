@@ -7,17 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace Library_Managment__System
 {
     public partial class Home_form : Form
     {
-        public static int x;
+        public static int key;
 
         public Home_form()
         {
             InitializeComponent();
-            x = 0;
+            key = 0;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -28,40 +27,35 @@ namespace Library_Managment__System
 
         private void Borrow_btn_Click(object sender, EventArgs e)
         {
-            x = 1;
+            key = 2;
             Old_Member form = new Old_Member();
             form.Show();
+
         }
 
         private void Return_btn_Click(object sender, EventArgs e)
         {
-            x = 2;
             Old_Member form = new Old_Member();
-            form.Show();
+                form.Show();
+               key = 1;
 
         }
 
         private void Buy_btn_Click(object sender, EventArgs e)
         {
-            x = 3;
+            key = 0;
             Old_Member form = new Old_Member();
-            form.Show();
+                form.Show();
 
         }
 
         private void New_member_btn_Click(object sender, EventArgs e)
         {
             Sign_up form = new Sign_up();
-            form.Show();
+                form.Show();
 
 
         }
-
-       // private void Home_form_Load(object sender, EventArgs e)
-        //{
-
-        //}
-
         private void label1_Click(object sender, EventArgs e)
         {
             label1.Text = $"Memory Used :{Sign_up.Mem()}";
@@ -70,6 +64,11 @@ namespace Library_Managment__System
         private void label2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Home_form_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
