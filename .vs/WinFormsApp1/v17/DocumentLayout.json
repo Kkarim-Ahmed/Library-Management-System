@@ -11,7 +11,7 @@
       "RelativeMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\old_member.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|d:\\programing\\github repos\\library-management-system\\winformsapp1\\old_member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|D:\\Programing\\GitHub Repos\\Library-Management-System\\winformsapp1\\old_member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{DC7C6351-056F-43EA-BD72-A05C6D138862}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\old_member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -66,6 +66,10 @@
               "IsPinned": true
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Users.cs",
@@ -75,8 +79,7 @@
               "RelativeToolTip": "WinFormsApp1\\Users.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T22:29:53.217Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-22T22:29:53.217Z"
             },
             {
               "$type": "Document",
@@ -88,8 +91,7 @@
               "RelativeToolTip": "WinFormsApp1\\Methods.cs",
               "ViewState": "AgIAAB4AAAAAAAAAAAAYwCcAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T22:24:18.878Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-22T22:24:18.878Z"
             },
             {
               "$type": "Document",
@@ -104,10 +106,6 @@
               "EditorCaption": " [Design]"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Old_Member.Designer.cs",
@@ -117,8 +115,7 @@
               "RelativeToolTip": "WinFormsApp1\\Old_Member.Designer.cs",
               "ViewState": "AgIAANYAAAAAAAAAAAArwOMAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T02:42:18.549Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-22T02:42:18.549Z"
             },
             {
               "$type": "Document",
@@ -129,8 +126,7 @@
               "ToolTip": "D:\\Programing\\GitHub Repos\\Library-Management-System\\WinFormsApp1\\Home_form.resx",
               "RelativeToolTip": "WinFormsApp1\\Home_form.resx",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2025-05-22T01:35:30.67Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-22T01:35:30.67Z"
             },
             {
               "$type": "Document",
@@ -140,7 +136,7 @@
               "RelativeDocumentMoniker": "WinFormsApp1\\Old_Member.cs",
               "ToolTip": "D:\\Programing\\GitHub Repos\\Library-Management-System\\WinFormsApp1\\Old_Member.cs",
               "RelativeToolTip": "WinFormsApp1\\Old_Member.cs",
-              "ViewState": "AgIAAAYBAAAAAAAAAAAwwMcAAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAABgBAAAAAAAAAAAswMMAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-22T00:44:44.301Z",
               "EditorCaption": ""
@@ -155,8 +151,7 @@
               "RelativeToolTip": "WinFormsApp1\\ADD_BOOK.Designer.cs",
               "ViewState": "AgIAAMMAAAAAAAAAAAASwDgAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T00:40:28.109Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-22T00:40:28.109Z"
             },
             {
               "$type": "Document",
