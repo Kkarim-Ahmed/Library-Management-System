@@ -158,6 +158,7 @@
             Name = "Home_form";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Home_form";
+            Load += Home_form_Load;
             ResumeLayout(false);
             PerformLayout();
 

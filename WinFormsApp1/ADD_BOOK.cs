@@ -18,12 +18,6 @@ namespace Library_Managment__System
         {
             InitializeComponent();
         }
-
-        private void ADD_BOOK_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void ADD_NBook_Click(object sender, EventArgs e)
         {
             Book elemnt = new Book(NBook_name.Text, NBook_author.Text, NBook_Year.Text, int.Parse(NBook_Price.Text), int.Parse(quant_Txtbox.Text));
@@ -62,8 +56,32 @@ namespace Library_Managment__System
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DVD element = new DVD(NDvd_name.Text, NDvd_genre.Text, NDvd_duration.Text, int.Parse(NDvd_price.Text), int.Parse(NDvd_quant.Text),NDvd_year.Text);
+            DVD element = new DVD(NDvd_name.Text, NDvd_genre.Text, NDvd_duration.Text, int.Parse(NDvd_price.Text), int.Parse(NDvd_quant.Text), NDvd_year.Text);
             Inventory.AddItem(element);
+        }
+
+        private void NDvd_year_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void NDvd_price_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void NDvd_quant_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
