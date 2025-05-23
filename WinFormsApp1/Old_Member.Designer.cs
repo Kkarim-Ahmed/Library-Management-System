@@ -60,10 +60,10 @@ namespace Library_Managment__System
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(47, 60);
-            label1.Margin = new Padding(5, 0, 5, 0);
+            label1.Location = new Point(41, 45);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(49, 20);
+            label1.Size = new Size(39, 15);
             label1.TabIndex = 0;
             label1.Text = "Name";
             // 
@@ -72,30 +72,30 @@ namespace Library_Managment__System
             old_name.AllowDrop = true;
             old_name.BackColor = SystemColors.Window;
             old_name.ForeColor = SystemColors.InactiveCaptionText;
-            old_name.Location = new Point(47, 97);
-            old_name.Margin = new Padding(5, 4, 5, 4);
+            old_name.Location = new Point(41, 73);
+            old_name.Margin = new Padding(4, 3, 4, 3);
             old_name.MaxLength = 16;
             old_name.Name = "old_name";
-            old_name.Size = new Size(95, 27);
+            old_name.Size = new Size(84, 23);
             old_name.TabIndex = 1;
             // 
             // phone_number
             // 
-            phone_number.Location = new Point(161, 97);
-            phone_number.Margin = new Padding(5, 4, 5, 4);
+            phone_number.Location = new Point(141, 73);
+            phone_number.Margin = new Padding(4, 3, 4, 3);
             phone_number.MaxLength = 11;
             phone_number.Name = "phone_number";
-            phone_number.Size = new Size(132, 27);
+            phone_number.Size = new Size(116, 23);
             phone_number.TabIndex = 2;
             phone_number.KeyPress += phone_number_KeyPress;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(161, 60);
-            label2.Margin = new Padding(5, 0, 5, 0);
+            label2.Location = new Point(141, 45);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(108, 20);
+            label2.Size = new Size(88, 15);
             label2.TabIndex = 4;
             label2.Text = "Phone Number";
             // 
@@ -110,10 +110,10 @@ namespace Library_Managment__System
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(47, 203);
-            label3.Margin = new Padding(5, 0, 5, 0);
+            label3.Location = new Point(41, 152);
+            label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(89, 20);
+            label3.Size = new Size(71, 15);
             label3.TabIndex = 7;
             label3.Text = "Book_Name";
             // 
@@ -124,38 +124,35 @@ namespace Library_Managment__System
             BOOKS_COMBO.DataSource = bookBindingSource1;
             BOOKS_COMBO.DisplayMember = "Name";
             BOOKS_COMBO.FormattingEnabled = true;
-            BOOKS_COMBO.Location = new Point(47, 239);
-            BOOKS_COMBO.Margin = new Padding(3, 4, 3, 4);
+            BOOKS_COMBO.Location = new Point(41, 179);
             BOOKS_COMBO.Name = "BOOKS_COMBO";
-            BOOKS_COMBO.Size = new Size(214, 28);
+            BOOKS_COMBO.Size = new Size(188, 23);
             BOOKS_COMBO.TabIndex = 8;
             BOOKS_COMBO.ValueMember = "Name";
             // 
             // DVD_COMBO
             // 
             DVD_COMBO.FormattingEnabled = true;
-            DVD_COMBO.Location = new Point(47, 433);
-            DVD_COMBO.Margin = new Padding(3, 4, 3, 4);
+            DVD_COMBO.Location = new Point(41, 325);
             DVD_COMBO.Name = "DVD_COMBO";
-            DVD_COMBO.Size = new Size(214, 28);
+            DVD_COMBO.Size = new Size(188, 23);
             DVD_COMBO.TabIndex = 12;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(47, 397);
-            label4.Margin = new Padding(5, 0, 5, 0);
+            label4.Location = new Point(41, 298);
+            label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(86, 20);
+            label4.Size = new Size(67, 15);
             label4.TabIndex = 11;
             label4.Text = "DVD_Name";
             // 
             // button2
             // 
-            button2.Location = new Point(302, 239);
-            button2.Margin = new Padding(3, 4, 3, 4);
+            button2.Location = new Point(264, 179);
             button2.Name = "button2";
-            button2.Size = new Size(86, 31);
+            button2.Size = new Size(75, 23);
             button2.TabIndex = 13;
             button2.Text = "Add Book";
             button2.UseVisualStyleBackColor = true;
@@ -163,10 +160,9 @@ namespace Library_Managment__System
             // 
             // button3
             // 
-            button3.Location = new Point(302, 433);
-            button3.Margin = new Padding(3, 4, 3, 4);
+            button3.Location = new Point(264, 325);
             button3.Name = "button3";
-            button3.Size = new Size(86, 31);
+            button3.Size = new Size(75, 23);
             button3.TabIndex = 14;
             button3.Text = "Add DVD";
             button3.UseVisualStyleBackColor = true;
@@ -174,17 +170,16 @@ namespace Library_Managment__System
             // 
             // CHECKOUT
             // 
-            CHECKOUT.Location = new Point(402, 29);
+            CHECKOUT.Location = new Point(352, 22);
             CHECKOUT.Name = "CHECKOUT";
-            CHECKOUT.Size = new Size(298, 304);
+            CHECKOUT.Size = new Size(261, 228);
             CHECKOUT.TabIndex = 15;
             // 
             // button4
             // 
-            button4.Location = new Point(590, 371);
-            button4.Margin = new Padding(3, 4, 3, 4);
+            button4.Location = new Point(516, 278);
             button4.Name = "button4";
-            button4.Size = new Size(86, 31);
+            button4.Size = new Size(75, 23);
             button4.TabIndex = 16;
             button4.Text = "Delete";
             button4.UseVisualStyleBackColor = true;
@@ -192,10 +187,9 @@ namespace Library_Managment__System
             // 
             // button5
             // 
-            button5.Location = new Point(302, 97);
-            button5.Margin = new Padding(3, 4, 3, 4);
+            button5.Location = new Point(264, 73);
             button5.Name = "button5";
-            button5.Size = new Size(86, 31);
+            button5.Size = new Size(75, 23);
             button5.TabIndex = 17;
             button5.Text = "Search";
             button5.UseVisualStyleBackColor = true;
@@ -203,36 +197,34 @@ namespace Library_Managment__System
             // 
             // Delete_Index
             // 
-            Delete_Index.Location = new Point(554, 375);
-            Delete_Index.Margin = new Padding(3, 4, 3, 4);
+            Delete_Index.Location = new Point(485, 281);
             Delete_Index.Name = "Delete_Index";
-            Delete_Index.Size = new Size(30, 27);
+            Delete_Index.Size = new Size(27, 23);
             Delete_Index.TabIndex = 18;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(425, 9);
+            label5.Location = new Point(372, 7);
             label5.Name = "label5";
-            label5.Size = new Size(73, 20);
+            label5.Size = new Size(61, 15);
             label5.TabIndex = 19;
             label5.Text = "Checkout:";
             // 
             // Total_Check
             // 
             Total_Check.AutoSize = true;
-            Total_Check.Location = new Point(554, 333);
+            Total_Check.Location = new Point(485, 250);
             Total_Check.Name = "Total_Check";
-            Total_Check.Size = new Size(69, 20);
+            Total_Check.Size = new Size(53, 15);
             Total_Check.TabIndex = 20;
             Total_Check.Text = "Total : $0";
             // 
             // CheckOut_Final
             // 
-            CheckOut_Final.Location = new Point(470, 455);
-            CheckOut_Final.Margin = new Padding(3, 4, 3, 4);
+            CheckOut_Final.Location = new Point(411, 341);
             CheckOut_Final.Name = "CheckOut_Final";
-            CheckOut_Final.Size = new Size(206, 95);
+            CheckOut_Final.Size = new Size(180, 71);
             CheckOut_Final.TabIndex = 21;
             CheckOut_Final.Text = "Complete Payment";
             CheckOut_Final.UseVisualStyleBackColor = true;
@@ -241,40 +233,40 @@ namespace Library_Managment__System
             // Search_label
             // 
             Search_label.AutoSize = true;
-            Search_label.Location = new Point(49, 137);
+            Search_label.Location = new Point(43, 103);
             Search_label.Name = "Search_label";
-            Search_label.Size = new Size(0, 20);
+            Search_label.Size = new Size(0, 15);
             Search_label.TabIndex = 22;
             // 
             // SearchBooks_label
             // 
             SearchBooks_label.AutoSize = true;
-            SearchBooks_label.Location = new Point(46, 280);
+            SearchBooks_label.Location = new Point(40, 210);
             SearchBooks_label.Name = "SearchBooks_label";
-            SearchBooks_label.Size = new Size(0, 20);
+            SearchBooks_label.Size = new Size(0, 15);
             SearchBooks_label.TabIndex = 23;
             // 
             // SearchDVD_label
             // 
             SearchDVD_label.AutoSize = true;
-            SearchDVD_label.Location = new Point(49, 468);
+            SearchDVD_label.Location = new Point(43, 351);
             SearchDVD_label.Name = "SearchDVD_label";
-            SearchDVD_label.Size = new Size(0, 20);
+            SearchDVD_label.Size = new Size(0, 15);
             SearchDVD_label.TabIndex = 24;
             // 
             // Delete_Label
             // 
-            Delete_Label.Location = new Point(388, 375);
+            Delete_Label.Location = new Point(340, 281);
             Delete_Label.Name = "Delete_Label";
-            Delete_Label.Size = new Size(160, 27);
+            Delete_Label.Size = new Size(140, 20);
             Delete_Label.TabIndex = 0;
             Delete_Label.Text = "Delete Label";
             // 
             // Old_Member
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(712, 617);
+            ClientSize = new Size(623, 463);
             Controls.Add(Delete_Label);
             Controls.Add(SearchDVD_label);
             Controls.Add(SearchBooks_label);
@@ -296,7 +288,7 @@ namespace Library_Managment__System
             Controls.Add(phone_number);
             Controls.Add(old_name);
             Controls.Add(label1);
-            Margin = new Padding(5, 4, 5, 4);
+            Margin = new Padding(4, 3, 4, 3);
             Name = "Old_Member";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Complete Checkout";

@@ -83,21 +83,5 @@ namespace Library_Managment__System
                 e.Handled = true;
             }
         }
-
-        private void NBook_name_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsAsciiLetter(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void NDvd_name_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsAsciiLetter(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
     }
 }

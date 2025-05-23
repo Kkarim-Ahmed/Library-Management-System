@@ -75,7 +75,6 @@
             NBook_name.Name = "NBook_name";
             NBook_name.Size = new Size(132, 27);
             NBook_name.TabIndex = 1;
-            NBook_name.KeyPress += NBook_name_KeyPress;
             // 
             // NBook_author
             // 
@@ -259,7 +258,6 @@
             NDvd_name.Name = "NDvd_name";
             NDvd_name.Size = new Size(132, 27);
             NDvd_name.TabIndex = 14;
-            NDvd_name.KeyPress += NDvd_name_KeyPress;
             // 
             // label9
             // 

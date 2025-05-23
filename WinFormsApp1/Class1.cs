@@ -1,13 +1,12 @@
 ﻿using CsvHelper.Configuration;
 using CsvHelper;
-using Inventory;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static Inventory.Book;
+using Library_Managment__System;
 using Microsoft.VisualBasic;
 using CsvHelper.Configuration.Attributes;
 

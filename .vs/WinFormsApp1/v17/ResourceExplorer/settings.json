@@ -1,17 +1,1 @@
-{
-  "ShowEmptyProjects": false,
-  "SelectedGroups": [],
-  "ExpandedProjects": [],
-  "EnableSpellChecker": true,
-  "ColumnOrder": [
-    "name",
-    "type",
-    "neutral-value",
-    "neutral-comment"
-  ],
-  "VisibleColumnKeys": [
-    "name",
-    "neutral-comment",
-    "neutral-value"
-  ]
-}
+{"ShowEmptyProjects":false,"CustomColumnOrderings":{"name":0,"type":1,"neutral-value":2,"neutral-comment":3},"ShowValidationErrors":true,"SelectedResourceGroupsByProjectFilePath":{"E:\\Git Repos\\Library-Management-System\\WinFormsApp1\\WinFormsApp1.csproj":["E:\\Git Repos\\Library-Management-System\\WinFormsApp1\\Home_form.resx"]},"VisibleColumnKeys":["name","neutral-comment","neutral-value"]}
