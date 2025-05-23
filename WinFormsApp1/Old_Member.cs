@@ -37,7 +37,7 @@ namespace Library_Managment__System
             // suggesting and appending for BOOK_combo box 
             BOOKS_COMBO.DataSource = Book.books;
             BOOKS_COMBO.DisplayMember = "Name";
-            BOOKS_COMBO.ValueMember = "Name"; ;
+            BOOKS_COMBO.ValueMember = "Name";
             BOOKS_COMBO.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             BOOKS_COMBO.AutoCompleteSource = AutoCompleteSource.ListItems;
             BOOKS_COMBO.DropDownStyle = ComboBoxStyle.DropDown;
@@ -50,7 +50,7 @@ namespace Library_Managment__System
             DVD_COMBO.AutoCompleteSource = AutoCompleteSource.ListItems;
             DVD_COMBO.DropDownStyle = ComboBoxStyle.DropDown;
             DVD_COMBO.Hide();
-            // hiding buttons untill we found the user in the Csv file .
+            // hiding buttons until we find the user in the CSV file.
             button2.Hide();
             button3.Hide();
             label3.Hide();
@@ -66,21 +66,20 @@ namespace Library_Managment__System
                 e.Handled = true;
             }
         }
-        private void button5_Click(object sender, EventArgs e)//button serach name and phone 
+        private void button5_Click(object sender, EventArgs e)//button search name and phone 
         {
-            Delete_Label.Hide(); // To Hide Unneccessary Label If Present
+            Delete_Label.Hide(); //To hide unnecessary label if present
             int index = CsvFile<Members>.Search(Members.Memberlist, old_name.Text);// searching in the CSV File (function in methods class)
-            if (index == -1)//Not Found in the CSV File
+            if (index == -1)//Not found in the CSV File
             {
                 Search_label.ForeColor = Color.Red;
-                Search_label.Text = "Check Member credentials";
-
-            }// found with the right phone number.
+                Search_label.Text = "Check member credentials.";
+            }
             else if (Members.Memberlist[index].PhoneNumber == phone_number.Text)
             {
-                Search_label.ForeColor = Color.Green;
-                Search_label.Text = "Verified";
                 // Showing Buttons Add Book and DVD And Combo boxes
+                Search_label.ForeColor = Color.Green;
+                Search_label.Text = "Member verified.";
                 button2.Show();
                 button3.Show();
                 label3.Show();
@@ -90,152 +89,145 @@ namespace Library_Managment__System
                 BOOKS_COMBO.Show();
                 DVD_COMBO.Show();
             }
-            else// Name Found But worng Phone Number
+            else// Name found but wrong phone number
             {
                 Search_label.ForeColor = Color.Red;
-                Search_label.Text = "Wrong Phone Number Please Check";
+                Search_label.Text = "Wrong phone number. Please check.";
             }
         }
         private void button2_Click(object sender, EventArgs e)//ADD BOOK BUTTON
         {
-            Delete_Label.Hide(); // To Hide Unneccessary Label If Present
+            Delete_Label.Hide(); //To hide unnecessary label if present
             int index = CsvFile<Book>.Search(Book.books, BOOKS_COMBO.Text);//Searching in the Books Csv
             if (index == -1)// Checks if book exists
             {
                 SearchBooks_label.ForeColor = Color.Red;
-                SearchBooks_label.Text = "Not Found";
+                SearchBooks_label.Text = "Book not found.";
                 return;
             }
             if (Home_form.key == 0) //BUY Button
             {
-                int count = Checkout_list.Count(i => i.Name == BOOKS_COMBO.Text); // number if times the DVD was added to checkout
+                int count = Checkout_list.Count(i => i.Name == BOOKS_COMBO.Text); // number of times the book was added to checkout
                 if (Book.books[index].quant <= count)
                 {
                     SearchBooks_label.ForeColor = Color.Red;
-                    SearchBooks_label.Text = "Not Available";
+                    SearchBooks_label.Text = "Book not available.";
                 }
                 else
                 {
                     Checkout_list.Add(Book.books[index]);//Adding to Checkout List
                     Total += Book.books[index].price;//updating Total price
-                                                     // updating GUI
-                    CHECKOUT.Text += $" ({I})_BOOK :: {Book.books[index].Name} $ {Book.books[index].price}\n";
-                    Total_Check.Text = $"Total : ${Total}";
+                    // updating GUI
+                    CHECKOUT.Items.Add($"({I}) Book: {Book.books[index].Name} - ${Book.books[index].price}");
+                    Total_Check.Text = $"Total: ${Total}";
                     Total_Check.Show();
-                    SearchBooks_label.ForeColor = Color.Green; SearchBooks_label.Text = "Found";
+                    SearchBooks_label.ForeColor = Color.Green;
+                    SearchBooks_label.Text = "Book added to checkout.";
                     I++;
                 }
-
             }
-                else if (Home_form.key == 1)// Return Form
+            else if (Home_form.key == 1)// Return Form
+            {
+                bool found = false;
+                var list = Borrow.FindBorrowed(old_name.Text.ToLower());//all borrowed books by the user 
+                int donebefore = Checkout_borrowlist.FindIndex(i => !string.IsNullOrEmpty(i.Itemname)
+                    && i.Itemname.ToLower().Equals(BOOKS_COMBO.Text.ToLower(),
+                    StringComparison.OrdinalIgnoreCase)); // variable to check if book was added to borrow list
+                foreach (var item in list)//loop in the list
                 {
-                    bool found = false;
-                    var list = Borrow.FindBorrowed(old_name.Text.ToLower());//all borrowed books buy the user 
-                    int donebefore; // variable to check if book was added to borrow list
-                    donebefore = Checkout_borrowlist.FindIndex(i => !string.IsNullOrEmpty(i.Itemname)
-                        && i.Itemname.ToLower().Equals(BOOKS_COMBO.Text.ToLower(),
-                        StringComparison.OrdinalIgnoreCase));
-                    foreach (var item in list)//loop in the list
+                    //check if the book found in the list 
+                    if (donebefore != -1) // check if book was already added
                     {
+                        SearchBooks_label.Text = "This book is already in the checkout list.";
+                        SearchBooks_label.ForeColor = Color.Red;
+                        SearchBooks_label.Show();
+                        found = true;
+                        break; //break the Foreach if Found 
+                    }
+                    if (item.Itemname.ToLower() == BOOKS_COMBO.Text.ToLower()
+                            && item.Itemtype.ToLower() == "book")//Comparison
+                    {
+                        found = true;
+                        Checkout_borrowlist.Add(item); //add borrow list
+                        if (Checkout_borrowlist[I - 1].Duedate == DateTime.Now.ToString())
+                            Total += Checkout_borrowlist[I - 1].price * 0.1; //check for due date
+                        CHECKOUT.Items.Add($"({I}) Book: {Book.books[index].Name} - ${Book.books[index].price}"); //updating GUI     
+                        Total_Check.Text = $"Returning {I} item(s)";
+                        Total_Check.Show();
+                        SearchBooks_label.ForeColor = Color.Green;
+                        SearchBooks_label.Text = "Book added to checkout.";
+                        I++;
+                        break;
+                    }
+                }
+                if (!found) //Updating GUI IF the user did not borrow the book
+                {
+                    SearchBooks_label.ForeColor = Color.Red;
+                    SearchBooks_label.Text = "You have not borrowed this book.";
+                }
+            }
+            else if (Home_form.key == 2)//Borrow FORM
+            {
+                var list = Borrow.FindBorrowed(old_name.Text.ToLower());//all borrowed books by the user
+                int Taken = list.FindIndex(i => !string.IsNullOrEmpty(i.Itemname) &&
+                i.Itemname.ToLower().Equals(BOOKS_COMBO.Text.ToLower(),
+                    StringComparison.OrdinalIgnoreCase)); // checks if user already borrowed this book
 
-                        //check if the book found in the list 
-                        if (donebefore != -1) // check if book was already added
+                if (Taken == -1)// if book isn't borrowed
+                {
+                    int donebefore = Checkout_borrowlist.FindIndex(i => !string.IsNullOrEmpty(i.Itemname)
+                            && i.Itemname.ToLower().Equals(BOOKS_COMBO.Text.ToLower(),
+                            StringComparison.OrdinalIgnoreCase)); // checks if book was already in checkout list
+                    if (donebefore != -1)
+                    {
+                        SearchBooks_label.Text = "This book is already in the checkout list.";
+                        SearchBooks_label.ForeColor = Color.Red;
+                        SearchBooks_label.Show();
+                    }
+                    else // i book wasnt added
+                    {
+                        int count_1 = Checkout_borrowlist.Count(i => i.Itemname == BOOKS_COMBO.Text); // number if times the book was added to checkout
+                        if (Book.books[index].quant <= count_1)//if the book is not available
                         {
-                            SearchBooks_label.Text = "This Book was already added to checkout";
                             SearchBooks_label.ForeColor = Color.Red;
-                            SearchBooks_label.Show();
-                            found = true;
-                            break;
+                            SearchBooks_label.Text = "Book not available.";
                         }
-                        if (item.Itemname.ToLower() == BOOKS_COMBO.Text.ToLower()
-                                && item.Itemtype.ToLower() == "book")//Comparison
+                        else
                         {
-                            found = true;
-                            //add borrow list
-                            Checkout_borrowlist.Add(item);
-                            //check for due date
-                            if (Checkout_borrowlist[I - 1].Duedate == DateTime.Now.ToString()) Total += Checkout_borrowlist[I - 1].price * 0.1;
-                            //updating GUI     
-                            CHECKOUT.Text += $" ({I})_BOOK:: {Checkout_borrowlist[I - 1].Itemname}\n";
-                            Total_Check.Text = $"Returning {I} Item(s)";
+                            Checkout_borrowlist.Add(new Borrow(old_name.Text.ToLower(), Book.books[index].Name, "Book", DateAndTime.Now.AddDays(14).ToString())); //adding to checkout_borrow list.
+                            CHECKOUT.Items.Add($"({I}) Book: {Book.books[index].Name} - ${Book.books[index].price}"); //updating to the GUI
                             Total_Check.Show();
+                            Total_Check.Text = $"Borrowing {I} item(s)";
                             SearchBooks_label.ForeColor = Color.Green;
-                            SearchBooks_label.Text = "Found";
+                            SearchBooks_label.Text = "Book added to checkout.";
                             I++;
-                            //break the Foreach if Found 
-                            break;
                         }
                     }
-                    if (!found) //Updating GUI IF the user did not borrow the book
-                    {
-                        SearchBooks_label.ForeColor = Color.Red;
-                        SearchBooks_label.Text = "The User Didn't Borrow This Book";
-                    }
                 }
-                else if (Home_form.key == 2)//Borrow FORM
+                else // if Item was found in borrowed list
                 {
-                    int donebefore;
-                    var list = Borrow.FindBorrowed(old_name.Text.ToLower());//all borrowed books by the user
-
-                    int Taken = list.FindIndex(i => !string.IsNullOrEmpty(i.Itemname) &&
-                    i.Itemname.ToLower().Equals(BOOKS_COMBO.Text.ToLower(),
-                        StringComparison.OrdinalIgnoreCase)); // checks if user already borrowed this book
-
-                    if (Taken == -1)// if book isnt borrowed
-                    {
-                        // checks if book was already in checkout list
-                        donebefore = Checkout_borrowlist.FindIndex(i => !string.IsNullOrEmpty(i.Itemname)
-                                && i.Itemname.ToLower().Equals(BOOKS_COMBO.Text.ToLower(),
-                                StringComparison.OrdinalIgnoreCase));
-                        //check if the book found in the list 
-                        if (donebefore != -1)
-                        {
-                            SearchBooks_label.Text = "This Book was already added to checkout";
-                            SearchBooks_label.ForeColor = Color.Red;
-                            SearchBooks_label.Show();
-                        }
-                        else // i book wasnt added
-                        {
-                            int count_1 = Checkout_borrowlist.Count(i => i.Itemname == BOOKS_COMBO.Text); // number if times the DVD was added to checkout
-                            if (Book.books[index].quant <= count_1)//if the DVD is not available
-                            {
-                                SearchBooks_label.ForeColor = Color.Red;
-                                SearchBooks_label.Text = "Not Available";
-                            }
-                            else
-                            {
-                                //adding to checkout_borrow list.
-                                Checkout_borrowlist.Add(new Borrow(old_name.Text.ToLower(), Book.books[index].Name, "Book", DateAndTime.Now.AddDays(14).ToString()));
-                                //updating to the GUI
-                                CHECKOUT.Text += $" ({I})_BOOK :: {Book.books[index].Name}\n";
-                                Total_Check.Show();
-                                Total_Check.Text = $"Borrowing {I} Item(s)";
-                                SearchBooks_label.ForeColor = Color.Green; SearchBooks_label.Text = "Found";
-                                I++;
-                            }
-                        }
-                    }
-                    else // if Item was found in borrowed list
-                    {
-                        SearchBooks_label.ForeColor = Color.Red;
-                        SearchBooks_label.Text = "This Item Was Already Borrowed Before";
-                    }
+                    SearchBooks_label.ForeColor = Color.Red;
+                    SearchBooks_label.Text = "This book was already borrowed.";
                 }
+            }
         }
-        
+
         private void button3_Click(object sender, EventArgs e)//ADD DVD BUTTON
         {
-            Delete_Label.Hide(); // To Hide Unneccessary Label If Present
-            // serching the DVD in the DVD file
-            int index = CsvFile<DVD>.Search(DVD.DVDS, DVD_COMBO.Text);
-            // break from the Function if the Book Not Found 
-            if (index == -1) { SearchDVD_label.ForeColor = Color.Red; SearchDVD_label.Text = "Not Found"; return; }
+            Delete_Label.Hide(); //To hide unnecessary label if present
+            int index = CsvFile<DVD>.Search(DVD.DVDS, DVD_COMBO.Text); // serching the DVD in the DVD file
+            if (index == -1) // break from the Function if the Book Not Found 
+            {
+                SearchDVD_label.ForeColor = Color.Red;
+                SearchDVD_label.Text = "DVD not found.";
+                return;
+            }
             if (Home_form.key == 0)//BUY FORM
             {
                 if (DVD.DVDS[index].quant <= 0)//if the DVD is not available
                 {
                     SearchDVD_label.ForeColor = Color.Red;
-                    SearchDVD_label.Text = "Not Available";
+                    SearchDVD_label.Text = "DVD not available.";
                 }
                 else
                 {
@@ -243,19 +235,18 @@ namespace Library_Managment__System
                     if (DVD.DVDS[index].quant <= count)//if the DVD is not available
                     {
                         SearchDVD_label.ForeColor = Color.Red;
-                        SearchDVD_label.Text = "Not Available";
+                        SearchDVD_label.Text = "DVD not available.";
                         return;
                     }
                     else
                     {
-                        //Addind to Checkout list
-                        Checkout_list.Add(DVD.DVDS[index]);
-                        //Updating the GUI
-                        CHECKOUT.Text += $" ({I})DVD :: {DVD.DVDS[index].Name} $ {DVD.DVDS[index].price}\n";
+                        Checkout_list.Add(DVD.DVDS[index]); //Addind to Checkout list
+                        CHECKOUT.Items.Add($"({I}) DVD: {DVD.DVDS[index].Name} - ${DVD.DVDS[index].price}"); //Updating the GUI
                         Total_Check.Show();
                         Total += DVD.DVDS[index].price;
-                        Total_Check.Text = $"Total : ${Total}";
-                        SearchDVD_label.ForeColor = Color.Green; SearchDVD_label.Text = "Found";
+                        Total_Check.Text = $"Total: ${Total}";
+                        SearchDVD_label.ForeColor = Color.Green;
+                        SearchDVD_label.Text = "DVD added to checkout.";
                         I++;
                     }
                 }
@@ -263,17 +254,15 @@ namespace Library_Managment__System
             else if (Home_form.key == 1)//Return Form
             {
                 bool found = false;
-                int donebefore;
-                donebefore = Checkout_borrowlist.FindIndex(i => !string.IsNullOrEmpty(i.Itemname)
+                int donebefore = Checkout_borrowlist.FindIndex(i => !string.IsNullOrEmpty(i.Itemname)
                     && i.Itemname.ToLower().Equals(DVD_COMBO.Text.ToLower(),
                     StringComparison.OrdinalIgnoreCase));
-                //storing the Borrowed list in a list
-                var list = Borrow.FindBorrowed(old_name.Text.ToLower());
+                var list = Borrow.FindBorrowed(old_name.Text.ToLower()); //storing the Borrowed list in a list
                 foreach (var item in list)
                 {
                     if (donebefore != -1)
                     {
-                        SearchDVD_label.Text = "This DVD was already added to checkout";
+                        SearchDVD_label.Text = "This DVD is already in the checkout list.";
                         SearchDVD_label.ForeColor = Color.Red;
                         SearchDVD_label.Show();
                         found = true;
@@ -282,14 +271,14 @@ namespace Library_Managment__System
                     if (item.Itemname.ToLower() == DVD_COMBO.Text.ToLower() && item.Itemtype.ToLower() == "dvd")
                     {
                         found = true;
-                        Checkout_borrowlist.Add(item);//Adding DVD to the CheckoutList
-                        if (Checkout_borrowlist[I - 1].Duedate == DateTime.Now.ToString()) Total += Checkout_borrowlist[I - 1].price * 0.1;
-                        //Updating The GUI
+                        Checkout_borrowlist.Add(item); //Adding DVD to the CheckoutList
+                        if (Checkout_borrowlist[I - 1].Duedate == DateTime.Now.ToString())
+                            Total += Checkout_borrowlist[I - 1].price * 0.1;
                         SearchDVD_label.ForeColor = Color.Green;
-                        SearchDVD_label.Text = "Found";
-                        CHECKOUT.Text += $" ({I})_DVD :: {Checkout_borrowlist[I - 1].Itemname}\n";
+                        SearchDVD_label.Text = "DVD added to checkout.";
+                        CHECKOUT.Items.Add($"({I}) DVD: {DVD.DVDS[index].Name} - ${DVD.DVDS[index].price}"); //Updating The GUI
                         Total_Check.Show();
-                        Total_Check.Text = $"Returning {I} Item(s)";
+                        Total_Check.Text = $"Returning {I} item(s)";
                         I++;
                         break;
                     }
@@ -297,196 +286,178 @@ namespace Library_Managment__System
                 if (!found) //Updating GUI IF the user did not borrow the book
                 {
                     SearchDVD_label.ForeColor = Color.Red;
-                    SearchDVD_label.Text = "The User Didn't Borrow This DVD";
+                    SearchDVD_label.Text = "You have not borrowed this DVD.";
                 }
             }
             else if (Home_form.key == 2)//BORROW form
             {
-                int donebefore;
                 var list = Borrow.FindBorrowed(old_name.Text.ToLower());//all borrowed Items by the user
-
                 int Taken = list.FindIndex(i => !string.IsNullOrEmpty(i.Itemname) &&
-               i.Itemname.ToLower().Equals(DVD_COMBO.Text.ToLower(),
-                   StringComparison.OrdinalIgnoreCase));
+                   i.Itemname.ToLower().Equals(DVD_COMBO.Text.ToLower(),
+                       StringComparison.OrdinalIgnoreCase)); // checks if user already borrowed this DVD
 
-                if (Taken == -1)
+                if (Taken == -1) // if DVD isn't borrowed
                 {
-                    donebefore = Checkout_borrowlist.FindIndex(i => !string.IsNullOrEmpty(i.Itemname)
+                    int donebefore = Checkout_borrowlist.FindIndex(i => !string.IsNullOrEmpty(i.Itemname)
                             && i.Itemname.ToLower().Equals(DVD_COMBO.Text.ToLower(),
-                            StringComparison.OrdinalIgnoreCase));
-                    //check if the DVD found in the list 
+                            StringComparison.OrdinalIgnoreCase)); // checks if DVD was already in checkout list
                     if (donebefore != -1)
                     {
-                        SearchDVD_label.Text = "This DVD was already added to checkout";
+                        SearchDVD_label.Text = "This DVD is already in the checkout list.";
                         SearchDVD_label.ForeColor = Color.Red;
                         SearchDVD_label.Show();
                     }
-                    else
-                    {   
+                    else // i DVD wasnt added
+                    {
                         int count = Checkout_borrowlist.Count(i => i.Itemname == DVD_COMBO.Text); // number if times the DVD was added to checkout
                         if (DVD.DVDS[index].quant >= count)//if the DVD is not available
                         {
                             SearchDVD_label.ForeColor = Color.Red;
-                            SearchDVD_label.Text = "Not Available";
+                            SearchDVD_label.Text = "DVD not available.";
                             return;
                         }
                         else
                         {
-                            Checkout_borrowlist.Add(new Borrow(old_name.Text.ToLower(), DVD.DVDS[index].Name, "DVD", DateAndTime.DateString));
+                            Checkout_borrowlist.Add(new Borrow(old_name.Text.ToLower(), DVD.DVDS[index].Name, "DVD", DateAndTime.DateString)); //adding to checkout_borrow list.
                             SearchDVD_label.ForeColor = Color.Green;
-                            SearchDVD_label.Text = "Found";
-                            CHECKOUT.Text += $" ({I})_DVD :: {DVD.DVDS[index].Name} \n";
+                            SearchDVD_label.Text = "DVD added to checkout.";
+                            CHECKOUT.Items.Add($"({I}) DVD: {DVD.DVDS[index].Name} - ${DVD.DVDS[index].price}"); //updating to the GUI
                             Total_Check.Show();
-                            Total_Check.Text = $"Borrowing {I} Item(s)";
+                            Total_Check.Text = $"Borrowing {I} item(s)";
                             I++;
                         }
                     }
                 }
-                else
+                else // if Item was found in borrowed list
                 {
                     SearchDVD_label.ForeColor = Color.Red;
-                    SearchDVD_label.Text = "This Item Was Already Borrowed Before";
+                    SearchDVD_label.Text = "This DVD was already borrowed.";
                 }
             }
         }
         private void button4_Click(object sender, EventArgs e)//DELETE BUTTON
         {
-            Delete_Label.Hide(); // To Hide Unneccessary Label If Present
+            Delete_Label.Hide(); //To hide unnecessary label if present
             int ind = -1;
-            var process = Process.GetCurrentProcess();
 
-            // Memory before
-            long memBefore = process.PrivateMemorySize64;
-
-            Stopwatch sw = Stopwatch.StartNew();
             try
             {
                 ind = int.Parse(Delete_Index.Text);
             }
             catch (Exception)
             {
-
-                Delete_Label.Text = $"Exception is : Format Exception";
+                Delete_Label.Text = "Invalid index format.";
+                Delete_Label.Show();
+                return;
             }
-            sw.Stop();
 
-            CHECKOUT.Text = "";//deleting Checkout label text
-            I = 1;//reintializing the counter for the label 
-            Total = 0;
-            if (Home_form.key == 0) //BUY FORM
+            // The ListBox is 0-based, but user input is likely 1-based
+            int listIndex = ind - 1;
+
+            if (Home_form.key == 0) // BUY FORM
             {
-                try
-                {
-                    Checkout_list.RemoveAt(ind - 1);
-                }
-                catch (ArgumentOutOfRangeException)
+                if (listIndex < 0 || listIndex >= Checkout_list.Count)
                 {
                     Delete_Label.Show();
                     Delete_Label.ForeColor = Color.Red;
-                    Delete_Label.Text = "ArgumentOutOfRangeException";
+                    Delete_Label.Text = "Index out of range.";
+                    return;
                 }
-                catch (ArgumentNullException)
-                {
-                    Delete_Label.Show();
-                    Delete_Label.ForeColor = Color.Red;
-                    Delete_Label.Text = "ArgumentNullException";
-                }
-                Delete_Label.Hide();
-                //rewriting the Check_out_list
+
+                // Remove from internal list and ListBox
+                var removed = Checkout_list[listIndex];
+                Total -= removed is Book book ? book.price : (removed is DVD dvd ? dvd.price : 0);
+                Checkout_list.RemoveAt(listIndex);
+                CHECKOUT.Items.RemoveAt(listIndex);
+
+                // Rebuild the ListBox with correct numbering
+                CHECKOUT.Items.Clear();
+                I = 1;
                 foreach (var item in Checkout_list)
                 {
-                    if (item is Book book)//applying polymorpism
-                    {
-                        Book? booky = item as Book;//applying casting 
-                        //updating the GUI
-                        CHECKOUT.Text += $" ({I})_BOOK :: {item.Name} $ {booky?.price}\n";
-                        Total += booky?.price ?? 0;
-                        Total_Check.Text = $"Total : ${Total}";
-                        I++;
-                    }
-                    else
-                    {
-                        DVD? DVDY = item as DVD;//applying casting 
-                        //applying Casting
-                        CHECKOUT.Text += $" ({I})_DVD :: {item.Name} $ {DVDY?.price}\n";
-                        Total += DVDY?.price ?? 0;
-                        Total_Check.Text = $"Total : ${Total}";
-                        I++;
-                    }
-
-                }
-            }
-            else//return and Borrow form
-            {
-                try
-                {
-                    Checkout_borrowlist.RemoveAt(ind - 1);
-                }
-                catch (ArgumentOutOfRangeException)
-                {
-                    Delete_Label.Show();
-                    Delete_Label.ForeColor = Color.Red;
-                    Delete_Label.Text = "ArgumentOutOfRangeException";
-                }
-                catch (ArgumentNullException)
-                {
-                    Delete_Label.Show();
-                    Delete_Label.ForeColor = Color.Red;
-                    Delete_Label.Text = "ArgumentNullException";
-                }
-                
-                foreach (var item in Checkout_borrowlist)
-                {
-                    CHECKOUT.Text += $" ({I})_{item.Itemtype.ToUpper()} :: " + item.Itemname + "\n";
+                    if (item is Book b)
+                        CHECKOUT.Items.Add($"({I}) Book: {b.Name} - ${b.price}");
+                    else if (item is DVD d)
+                        CHECKOUT.Items.Add($"({I}) DVD: {d.Name} - ${d.price}");
                     I++;
                 }
-                if (Home_form.key == 1) { Total_Check.Text = $"Returning {I - 1} Item(s)"; Total_Check.Show(); }
-                if (Home_form.key == 2) { Total_Check.Text = $"Borrowing {I - 1} Item(s)"; Total_Check.Show(); }
-
+                Total_Check.Text = $"Total: ${Total}";
+                Total_Check.Show();
+            }
+            else // RETURN or BORROW FORM
+            {
+                if (listIndex < 0 || listIndex >= Checkout_borrowlist.Count)
+                {
+                    Delete_Label.Show();
+                    Delete_Label.ForeColor = Color.Red;
+                    Delete_Label.Text = "Index out of range.";
+                    return;
                 }
+
+                // Remove from internal list and ListBox
+                Checkout_borrowlist.RemoveAt(listIndex);
+                CHECKOUT.Items.RemoveAt(listIndex);
+
+                // Rebuild the ListBox with correct numbering
+                CHECKOUT.Items.Clear();
+                I = 1;
+                foreach (var item in Checkout_borrowlist)
+                {
+                    CHECKOUT.Items.Add($"({I}) {item.Itemtype}: {item.Itemname}");
+                    I++;
+                }
+
+                if (Home_form.key == 1)
+                {
+                    Total_Check.Text = $"Returning {Checkout_borrowlist.Count} item(s)";
+                    Total_Check.Show();
+                }
+                if (Home_form.key == 2)
+                {
+                    Total_Check.Text = $"Borrowing {Checkout_borrowlist.Count} item(s)";
+                    Total_Check.Show();
+                }
+            }
         }
         private void CheckOut_Final_Click(object sender, EventArgs e)//checkout_Final_button 
         {
             {
                 if (Home_form.key == 0)//BUY BUTTON
                 {
-                    foreach (var item in Checkout_list)
+                    foreach (var item in Checkout_list) 
                     {
+                        // Casting & Polymorphism
                         if (item is Book book)
                         {
-                            Book? booky = item as Book;//applying Casting
-                            int index = CsvFile<Book>.Search(Book.books, booky?.Name ?? "");//serahing in Books List
-                            Book.books[index].quant--;//updating Quantity
+                            Book? booky = item as Book;
+                            int index = CsvFile<Book>.Search(Book.books, booky?.Name ?? "");
+                            Book.books[index].quant--;
                         }
                         else
                         {
-                            DVD? DVDY = item as DVD;//applying Casting
-                            int index = CsvFile<DVD>.Search(DVD.DVDS, DVDY?.Name ??"");//serahing in DVD List
-                            DVD.DVDS[index].quant--;//updating Quantity
+                            DVD? DVDY = item as DVD;
+                            int index = CsvFile<DVD>.Search(DVD.DVDS, DVDY?.Name ?? "");
+                            DVD.DVDS[index].quant--;
                         }
                         I++;
-
                     }
-                    //updating the Csv File 
+                    //rewriting the CSV file
                     CsvFile<DVD>.Write(DVD.DVD_Path, DVD.DVDS, new DVD.DVDMap());
                     CsvFile<Book>.Write(Book.B_Path, Book.books, new Book.BookMap());
                     if (Total > 0)
-                        MessageBox.Show("Transaction Complete");
+                        MessageBox.Show("Transaction complete.");
                     Checkout_list.Clear();
                 }
-                //----------------------------------------------------
                 else if (Home_form.key == 1)//RETURN BUTTON
                 {
                     foreach (var item in Checkout_borrowlist)
                     {
                         if (item.Itemtype.ToLower() == "book")
                         {
-                            //searcing in the Book List 
+                            //Searching For the Book in the CSV File
                             int index = CsvFile<Book>.Search(Book.books, item.Itemname);
-                            //updating the quantity in the Books List
                             Book.books[index].Borrowed--;
                             Book.books[index].quant++;
-                            //Removing the item form the Borrowed list  
                             int index_1 = Borrow.SearchItemName(Borrow.Borrowedlist, item.Itemname);
                             Borrow.Borrowedlist.RemoveAt(index_1);
                         }
@@ -502,13 +473,11 @@ namespace Library_Managment__System
                             Borrow.Borrowedlist.RemoveAt(index_1);
                         }
                     }
-                    //updating the borrowed CSV File 
                     CsvFile<Borrow>.Write(Borrow.Borrow_Path, Borrow.Borrowedlist, new Borrow.Borrowedmap());
-                    MessageBox.Show("Items(s) Succesfully Returned");
+                    MessageBox.Show("Item(s) successfully returned.");
                     Checkout_borrowlist.Clear();
                 }
-                //---------------------------------------------------------------
-                else if (Home_form.key == 2)//BORROW BUTTON/
+                else if (Home_form.key == 2)//BORROW BUTTON
                 {
                     foreach (var item in Checkout_borrowlist)
                     {
@@ -516,7 +485,6 @@ namespace Library_Managment__System
                         {
                             //searching for the Book in the Csv File 
                             int index = CsvFile<Book>.Search(Book.books, item.Itemname);
-                            //updating the books list 
                             Book.books[index].Borrowed++;
                             Book.books[index].quant--;
                         }
@@ -533,7 +501,7 @@ namespace Library_Managment__System
                     }
                     //rewirting the CSV File
                     CsvFile<Borrow>.Write(Borrow.Borrow_Path, Borrow.Borrowedlist, new Borrow.Borrowedmap());
-                    MessageBox.Show("Borrow List Updated");
+                    MessageBox.Show("Borrow list updated.");
                     Checkout_borrowlist.Clear();
 
                 }

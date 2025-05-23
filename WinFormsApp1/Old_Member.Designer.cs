@@ -42,7 +42,6 @@ namespace Library_Managment__System
             label4 = new Label();
             button2 = new Button();
             button3 = new Button();
-            CHECKOUT = new Label();
             button4 = new Button();
             button5 = new Button();
             Delete_Index = new TextBox();
@@ -53,6 +52,7 @@ namespace Library_Managment__System
             SearchBooks_label = new Label();
             SearchDVD_label = new Label();
             Delete_Label = new Label();
+            CHECKOUT = new ListBox();
             ((System.ComponentModel.ISupportInitialize)bookBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bookBindingSource1).BeginInit();
             SuspendLayout();
@@ -168,13 +168,6 @@ namespace Library_Managment__System
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
-            // CHECKOUT
-            // 
-            CHECKOUT.Location = new Point(352, 22);
-            CHECKOUT.Name = "CHECKOUT";
-            CHECKOUT.Size = new Size(261, 228);
-            CHECKOUT.TabIndex = 15;
-            // 
             // button4
             // 
             button4.Location = new Point(516, 278);
@@ -262,11 +255,20 @@ namespace Library_Managment__System
             Delete_Label.TabIndex = 0;
             Delete_Label.Text = "Delete Label";
             // 
+            // CHECKOUT
+            // 
+            CHECKOUT.FormattingEnabled = true;
+            CHECKOUT.Location = new Point(400, 45);
+            CHECKOUT.Name = "CHECKOUT";
+            CHECKOUT.Size = new Size(211, 199);
+            CHECKOUT.TabIndex = 25;
+            // 
             // Old_Member
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(623, 463);
+            Controls.Add(CHECKOUT);
             Controls.Add(Delete_Label);
             Controls.Add(SearchDVD_label);
             Controls.Add(SearchBooks_label);
@@ -277,7 +279,6 @@ namespace Library_Managment__System
             Controls.Add(Delete_Index);
             Controls.Add(button5);
             Controls.Add(button4);
-            Controls.Add(CHECKOUT);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(DVD_COMBO);
@@ -313,7 +314,6 @@ namespace Library_Managment__System
         private Label label4;
         private Button button2;
         private Button button3;
-        private Label CHECKOUT;
         private Button button4;
         private Button button5;
         private TextBox Delete_Index;
@@ -324,5 +324,6 @@ namespace Library_Managment__System
         private Label SearchBooks_label;
         private Label SearchDVD_label;
         public Label Delete_Label;
+        private ListBox CHECKOUT;
     }
 }
